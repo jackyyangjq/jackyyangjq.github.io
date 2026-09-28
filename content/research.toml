@@ -3,19 +3,18 @@ title = "Research"
 description = "I study how digital technology and public policy change tourism and hospitality markets, using causal inference, time-series models and large language models as measurement tools for text."
 methods_title = "Methods and tools"
 methods_description = "Each area links to open code that runs the methods on simulated or public data, so the implementation can be checked without the confidential research data."
-
-note = "Papers under review are shown without estimates or original figures, to respect the review process. The sketches show each research design, not results."
+note = "† Corresponding author. Papers under review are shown without estimates or original figures, to respect the review process; the sketches show each research design, not results."
 
 [[groups]]
 id = "working-papers"
 title = "Under review"
 
 [[groups.items]]
-title = "Travel Facilitation and Local Housing Prices: A Staggered Policy Rollout"
-status = "Revise & resubmit"
+title = "Beyond tourism boom: Demand-side tourism promotion policies and housing prices"
+status = "Major revision"
 venue = "Annals of Tourism Research"
-authorship = "With co-authors · corresponding author"
-summary = "A travel-facilitation policy rolled out region by region in an East Asian country, studied with transaction-level housing data."
+authorship = "Wang, J., Hao, F., **Yang, J.**†, & Song, H."
+summary = "A visa liberalisation policy rolled out region by region in an East Asian country, studied with transaction-level housing data."
 finding = "Housing prices rose where the policy applied; the effect appeared only after a few years and worked partly through exposure to tourist flows."
 figure = "/images/research/staggered-policy.svg"
 figure_alt = "Design sketch: regions adopt the policy in waves, and the estimated effect rises only after a lag. Not real estimates."
@@ -26,10 +25,10 @@ label = "Methods code, simulated data"
 href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
 
 [[groups.items]]
-title = "Online Sentiment, Avoidance Talk and Visitor Arrivals"
-status = "Revise & resubmit, round 2"
+title = "Destination sentiment climate and tourist demand: LLM-based aspect sentiment, avoidance signals, and time-series evidence"
+status = "Major revision, round 2"
 venue = "Journal of Travel Research"
-authorship = "With co-authors"
+authorship = "Hao, F., Wang, K., **Yang, J.**, & Qiu, X."
 summary = "Daily indicators built from social-media posts about a destination in an Asian city, linked to official visitor arrivals."
 finding = "Shifts in online sentiment came before changes in how often people said they would avoid the destination, and those came before changes in arrivals."
 figure = "/images/research/sentiment-lead.svg"
@@ -41,11 +40,11 @@ label = "Text-measurement code"
 href = "https://github.com/jackieyangjq/llm-text-measurement"
 
 [[groups.items]]
-title = "Carbon Trading Pilots and Corporate Green Transformation: A Text-Based Index"
-status = "Revise & resubmit, round 2"
+title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
+status = "Revise & resubmit"
 venue = "Journal of Cleaner Production"
-authorship = "With co-authors · first author"
-summary = "Emissions-trading pilots introduced in waves across regions of a large emerging economy, studied with a panel of listed firms and a new index of green transformation built partly from the text of annual reports."
+authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
+summary = "China's emissions-trading pilots, introduced in waves across regions, studied with a panel of listed firms and a new index of green transformation built partly from the text of annual reports."
 figure = "/images/research/green-index-design.svg"
 figure_alt = "Design sketch: annual-report text feeds a firm-level green index, and pilots that start in waves are compared with a staggered difference-in-differences design."
 figure_caption = "Design sketch."
@@ -54,28 +53,20 @@ methods = ["Staggered DiD (Callaway–Sant'Anna)", "Goodman-Bacon decomposition"
 [[groups]]
 id = "in-progress"
 title = "Work in progress"
-description = "Described by topic and method only until submission."
 
 [[groups.items]]
-title = "Self-service technology and hotel performance"
+title = "Disclosed digital strategy in tourism: The automation–augmentation paradox in experiential service firms"
+status = "Working paper"
+authorship = "**Yang, J.**, Hao, F.†, & Wang, K."
+award = "Overall Best Paper Award and Hospitality Management Best Paper Award, CHME 2026 (conference version)"
+summary = "How tourism and hospitality firms present automation and augmentation strategies in their disclosures, measured with LLM labels that must quote their evidence."
+methods = ["LLM classification with quoted evidence", "Confidence-based human review", "Panel models for bounded outcomes"]
+
+[[groups.items]]
+title = "Digital transformation and performance in the hotel industry"
 status = "PhD thesis · in preparation"
 summary = "Two studies on how self-service check-in technology changes hotel operations and the guest experience, using large-scale operational data and online reviews."
 methods = ["Multilevel variance decomposition", "Quantile regression with fixed effects", "Staggered DiD for count outcomes", "LLM measurement of review text"]
-
-[[groups.items]]
-title = "How listed companies describe new technologies in their disclosures"
-status = "In preparation"
-summary = "Measuring how firms present automation and augmentation to investors. An earlier version won the Overall Best Paper Award at CHME 2026."
-methods = ["LLM classification with quoted evidence", "Confidence-based human review", "Panel models for bounded outcomes"]
-
-[[groups]]
-id = "publications"
-title = "Publications"
-
-[[groups.items]]
-title = "Economic consequences and mechanisms of China's carbon emissions trading policies: A literature review"
-venue = "Journal of Intelligent Society, 2(6), 63–92 (2023)"
-authorship = "Yang, J., & Qi, J."
 
 [[method_areas]]
 title = "Causal inference for policy"

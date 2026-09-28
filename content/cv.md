@@ -9,13 +9,16 @@ Dual PhD, School of Hotel and Tourism Management and Surrey Business School
 MSc in Applied Statistics, GPA 3.81/4.0, ranked 5 of 111
 
 **Shanghai University** · *2017 – 2021*\
-BEcon in Finance; BBus (second degree) with the University of Technology Sydney
+BEcon in Finance
+
+**University of Technology Sydney** · *2018 – 2021*\
+Bachelor of Business with Distinction, major in Finance (joint programme with Shanghai University)
 
 ## Awards
 
-- Best Paper Award, IATE 2026, University of Palermo (2026)
-- Overall Best Paper Award and Best Paper Award, Hospitality Management track, CHME 2026, University of Surrey (2026)
-- Runner-up, Surrey Business School PGR Poster Showcase (2026)
+- **Best Paper Award**, 10th International Conference of the International Association for Tourism Economics (IATE 2026), University of Palermo, Italy, June 2026, for “Policy-Induced Tourism Shocks and Local Real Estate: Causal Evidence from Visa Liberalization Policy”
+- **Overall Best Paper Award and Hospitality Management Best Paper Award**, Council for Hospitality Management Education (CHME) Conference 2026, for “Talking Digitalization: The Automation–Augmentation Paradox in the Tourism Industry”
+- **Runner Up Award**, Surrey Business School PGR Poster Showcase Event, University of Surrey, April 2026
 - Outstanding Graduate of Shanghai Municipality (2024)
 - National Second Prize, National College Student Statistical Modeling Competition (2023)
 - Postgraduate First Prize Scholarship, Shanghai University of International Business and Economics (2023)
@@ -24,10 +27,10 @@ BEcon in Finance; BBus (second degree) with the University of Technology Sydney
 
 ## Conference presentations
 
-- International Association for Tourism Economics (IATE), University of Palermo, Italy, June 2026
-- Council for Hospitality Management Education (CHME), University of Surrey, UK, June 2026
-- 3rd World Conference on Smart Tourism, Macau University of Science and Technology, December 2025
-- APacCHRIE 2025, Chiang Mai University, Thailand, May 2025
+- “Policy-Induced Tourism Shocks and Local Real Estate: Causal Evidence from Visa Liberalization Policy”, IATE 2026, University of Palermo, Italy, 23–26 June 2026
+- “Talking Digitalization: The Automation–Augmentation Paradox in the Tourism Industry”, CHME 2026, University of Surrey, UK, June 2026
+- “Talking Digitalization: The Automation–Augmentation Paradox in the Tourism and Hospitality Industry”, 3rd World Conference on Smart Tourism, Macau University of Science and Technology, December 2025
+- “Digital Transformation in Hospitality: How Smart Check-In Transforms Performance”, APacCHRIE 2025, Chiang Mai University, Thailand, May 2025
 
 ## Research experience
 

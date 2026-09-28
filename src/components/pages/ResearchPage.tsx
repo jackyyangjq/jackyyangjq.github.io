@@ -21,6 +21,11 @@ const inlineMarkdown = {
     em: ({ children }: React.ComponentProps<'em'>) => <em className="italic">{children}</em>,
 };
 
+export const authorMarkdown = {
+    p: ({ children }: React.ComponentProps<'p'>) => <p>{children}</p>,
+    strong: ({ children }: React.ComponentProps<'strong'>) => <strong className="font-semibold text-primary">{children}</strong>,
+};
+
 export function StatusBadge({ status, venue }: { status?: string; venue?: string }) {
     if (!status && !venue) return null;
     return (
@@ -74,7 +79,12 @@ function ResearchCard({ item, index }: { item: ResearchItem; index: number }) {
                     <StatusBadge status={item.status} venue={item.venue} />
                     <h3 className="mt-2 text-lg font-semibold text-primary leading-snug">{item.title}</h3>
                     {item.authorship && (
-                        <p className="mt-1 text-sm text-neutral-500">{item.authorship}</p>
+                        <div className="mt-1 text-sm text-neutral-600 dark:text-neutral-500">
+                            <ReactMarkdown components={authorMarkdown}>{item.authorship}</ReactMarkdown>
+                        </div>
+                    )}
+                    {item.award && (
+                        <p className="mt-2 text-sm font-medium text-accent">{item.award}</p>
                     )}
                     {item.summary && (
                         <div className="mt-3 text-sm text-neutral-700 dark:text-neutral-600 leading-relaxed">

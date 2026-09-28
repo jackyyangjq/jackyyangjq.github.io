@@ -50,6 +50,7 @@ export interface ResearchItem {
     status?: string;
     venue?: string;
     authorship?: string;
+    award?: string;
     summary?: string;
     finding?: string;
     figure?: string;

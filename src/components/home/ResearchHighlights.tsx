@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ResearchItem } from '@/types/page';
 import { useMessages } from '@/lib/i18n/useMessages';
-import { StatusBadge } from '@/components/pages/ResearchPage';
+import ReactMarkdown from 'react-markdown';
+import { StatusBadge, authorMarkdown } from '@/components/pages/ResearchPage';
 
 interface ResearchHighlightsProps {
     items: ResearchItem[];
@@ -41,6 +42,11 @@ export default function ResearchHighlights({ items, title, href = '/research' }:
                     >
                         <StatusBadge status={item.status} venue={item.venue} />
                         <h3 className="mt-1.5 font-semibold text-primary leading-snug">{item.title}</h3>
+                        {item.authorship && (
+                            <div className="mt-0.5 text-xs text-neutral-500">
+                                <ReactMarkdown components={authorMarkdown}>{item.authorship}</ReactMarkdown>
+                            </div>
+                        )}
                         {item.finding ? (
                             <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">{item.finding}</p>
                         ) : item.summary ? (

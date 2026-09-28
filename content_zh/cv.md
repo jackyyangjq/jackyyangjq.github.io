@@ -9,13 +9,16 @@
 应用统计硕士，GPA 3.81/4.0，专业排名 5/111
 
 **上海大学** · *2017 – 2021*\
-金融学学士；与悉尼科技大学合作项目商学学士（第二学位）
+金融学学士
+
+**悉尼科技大学（University of Technology Sydney）** · *2018 – 2021*\
+商学学士（荣誉等级：Distinction），主修金融（与上海大学合作办学项目）
 
 ## 获奖
 
-- IATE 2026 最佳论文奖，意大利巴勒莫大学（2026）
-- CHME 2026 总最佳论文奖、酒店管理分会场最佳论文奖，英国萨里大学（2026）
-- 萨里商学院研究生海报展第二名（2026）
+- **最佳论文奖**，第十届国际旅游经济学会年会（IATE 2026），意大利巴勒莫大学，2026 年 6 月；论文：“Policy-Induced Tourism Shocks and Local Real Estate: Causal Evidence from Visa Liberalization Policy”
+- **总最佳论文奖、酒店管理最佳论文奖**，酒店管理教育委员会年会（CHME 2026）；论文：“Talking Digitalization: The Automation–Augmentation Paradox in the Tourism Industry”
+- **亚军（Runner Up Award）**，萨里商学院研究生海报展，英国萨里大学，2026 年 4 月
 - 上海市优秀毕业生（2024）
 - 全国大学生统计建模大赛全国二等奖（2023）
 - 上海对外经贸大学研究生一等奖学金（2023）
@@ -24,10 +27,10 @@
 
 ## 会议报告
 
-- 国际旅游经济学会年会（IATE），意大利巴勒莫大学，2026 年 6 月
-- 酒店管理教育委员会年会（CHME），英国萨里大学，2026 年 6 月
-- 第三届世界智慧旅游大会，澳门科技大学，2025 年 12 月
-- APacCHRIE 2025，泰国清迈大学，2025 年 5 月
+- “Policy-Induced Tourism Shocks and Local Real Estate: Causal Evidence from Visa Liberalization Policy”，国际旅游经济学会年会（IATE 2026），意大利巴勒莫大学，2026 年 6 月 23–26 日
+- “Talking Digitalization: The Automation–Augmentation Paradox in the Tourism Industry”，酒店管理教育委员会年会（CHME 2026），英国萨里大学，2026 年 6 月
+- “Talking Digitalization: The Automation–Augmentation Paradox in the Tourism and Hospitality Industry”，第三届世界智慧旅游大会，澳门科技大学，2025 年 12 月
+- “Digital Transformation in Hospitality: How Smart Check-In Transforms Performance”，APacCHRIE 2025，泰国清迈大学，2025 年 5 月
 
 ## 研究经历
 
