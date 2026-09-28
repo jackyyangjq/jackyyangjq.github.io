@@ -31,11 +31,10 @@ export interface SiteConfig {
   };
   cv?: CvLink[];
   analytics?: {
-    umami_script?: string;
-    umami_website_id?: string;
-    domains?: string;
-    share_url?: string;
+    // Base URL of the site's own visit counter (Cloudflare Worker)
+    endpoint?: string;
     map_data?: string;
+    share_url?: string;
   };
   social: {
     email?: string;

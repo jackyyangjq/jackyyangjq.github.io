@@ -7,12 +7,15 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import type { SiteConfig } from '@/lib/config';
 import { useLocaleStore } from '@/lib/stores/localeStore';
 import { useMessages } from '@/lib/i18n/useMessages';
+import { projectEqualEarth, type ProjectionParams } from '@/lib/equalEarth';
+import { OPT_OUT_KEY } from '@/components/ui/VisitTracker';
 
 type LocalName = { en: string; zh: string };
 
 interface WorldData {
     width: number;
     height: number;
+    projection?: ProjectionParams;
     shapes: { code: string; name: LocalName; d: string }[];
     centroids: Record<string, { x: number; y: number; name: LocalName }>;
 }
@@ -20,9 +23,9 @@ interface WorldData {
 export interface VisitorData {
     generated_at?: string;
     since?: string;
-    totals?: { visitors: number; pageviews: number };
+    totals?: { visitors: number; pageviews: number; downloads?: number };
     countries?: { code: string; visitors: number }[];
-    cities?: { city: string; country: string; visitors: number }[];
+    cities?: { city: string; country: string; lat?: number | null; lon?: number | null; visitors: number }[];
     referrers?: { domain: string; visitors: number }[];
     daily?: { date: string; visitors: number }[];
 }
@@ -250,6 +253,40 @@ interface VisitorMapProps {
     detailsHref?: string;
 }
 
+function OptOutSwitch() {
+    const messages = useMessages();
+    const [optedOut, setOptedOut] = useState<boolean | null>(null);
+    useEffect(() => {
+        try {
+            setOptedOut(localStorage.getItem(OPT_OUT_KEY) === '1');
+        } catch {
+            setOptedOut(null);
+        }
+    }, []);
+    if (optedOut === null) return null;
+    const toggle = () => {
+        try {
+            if (optedOut) localStorage.removeItem(OPT_OUT_KEY);
+            else localStorage.setItem(OPT_OUT_KEY, '1');
+            setOptedOut(!optedOut);
+        } catch {
+            // storage blocked: nothing to change
+        }
+    };
+    return (
+        <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-500">
+            <span>{optedOut ? messages.visitors.optedOut : messages.visitors.optOutHint}</span>
+            <button
+                type="button"
+                onClick={toggle}
+                className="px-3 py-1 rounded-md border border-neutral-300 dark:border-neutral-700 hover:border-accent hover:text-accent transition-colors"
+            >
+                {optedOut ? messages.visitors.optIn : messages.visitors.optOut}
+            </button>
+        </div>
+    );
+}
+
 export default function VisitorMap({ title, description, analytics, variant = 'compact', detailsHref = '/visitors/' }: VisitorMapProps) {
     const locale = useLocaleStore((state) => state.locale) === 'zh' ? 'zh' : 'en';
     const messages = useMessages();
@@ -278,10 +315,24 @@ export default function VisitorMap({ title, description, analytics, variant = 'c
             .map(([code, v]) => ({ code, value: v, ...world.centroids[code] }));
     }, [world, byCountry, outlined]);
 
-    const showTip = (event: React.PointerEvent, code: string, value: number) => {
+    const cityDots = useMemo(() => {
+        if (!world?.projection) return [];
+        const rows = (stats?.cities || []).filter(
+            (c) => typeof c.lat === 'number' && typeof c.lon === 'number' && c.visitors > 0,
+        );
+        const max = Math.max(1, ...rows.map((c) => c.visitors));
+        return rows
+            .map((c) => {
+                const [x, y] = projectEqualEarth(c.lon as number, c.lat as number, world.projection as ProjectionParams);
+                return { ...c, x, y, r: 3 + 5 * Math.sqrt(c.visitors / max) };
+            })
+            .sort((a, b) => b.visitors - a.visitors);
+    }, [world, stats]);
+
+    const showTip = (event: React.PointerEvent, label: string, value: number) => {
         const box = mapRef.current?.getBoundingClientRect();
         if (!box) return;
-        setTooltip({ x: event.clientX - box.left, y: event.clientY - box.top, label: nameOf(code), value });
+        setTooltip({ x: event.clientX - box.left, y: event.clientY - box.top, label, value });
     };
 
     const totals = stats?.totals;
@@ -353,14 +404,23 @@ export default function VisitorMap({ title, description, analytics, variant = 'c
                                     d={shape.d}
                                     style={{ fill: fillFor(value), stroke: 'var(--map-border)', strokeWidth: 0.6 }}
                                     className={value > 0 ? 'transition-opacity hover:opacity-80' : undefined}
-                                    onPointerMove={(e) => showTip(e, shape.code, value)}
+                                    onPointerMove={(e) => showTip(e, nameOf(shape.code), value)}
                                 />
                             );
                         })}
                         {dots.map((dot) => (
-                            <g key={dot.code} onPointerMove={(e) => showTip(e, dot.code, dot.value)}>
+                            <g key={dot.code} onPointerMove={(e) => showTip(e, nameOf(dot.code), dot.value)}>
                                 <circle cx={dot.x} cy={dot.y} r={14} fill="transparent" />
                                 <circle cx={dot.x} cy={dot.y} r={5.5} style={{ fill: fillFor(dot.value), stroke: 'var(--surface)', strokeWidth: 2.5 }} />
+                            </g>
+                        ))}
+                        {cityDots.map((c) => (
+                            <g
+                                key={`${c.city}-${c.country}`}
+                                onPointerMove={(e) => showTip(e, `${c.city} · ${nameOf(c.country)}`, c.visitors)}
+                            >
+                                <circle cx={c.x} cy={c.y} r={Math.max(12, c.r + 6)} fill="transparent" />
+                                <circle cx={c.x} cy={c.y} r={c.r} style={{ fill: 'var(--map-dot)', fillOpacity: 0.88, stroke: 'var(--surface)', strokeWidth: 1.5 }} />
                             </g>
                         ))}
                     </svg>
@@ -380,7 +440,7 @@ export default function VisitorMap({ title, description, analytics, variant = 'c
                 )}
                 {!hasVisits && (
                     <p className="absolute inset-x-0 bottom-3 text-center text-xs text-neutral-500">
-                        {!stats && !failed ? messages.visitors.loading : messages.visitors.noneYet}
+                        {failed ? messages.visitors.unavailable : !stats ? messages.visitors.loading : messages.visitors.noneYet}
                     </p>
                 )}
             </div>
@@ -398,6 +458,10 @@ export default function VisitorMap({ title, description, analytics, variant = 'c
                     </span>
                 ))}
                 <span className="text-neutral-500">{messages.visitors.visitorsUnit}</span>
+                <span className="inline-flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full" style={{ background: 'var(--map-dot)' }} />
+                    {messages.visitors.cityDot}
+                </span>
             </div>
 
             {variant === 'full' && (
@@ -418,6 +482,12 @@ export default function VisitorMap({ title, description, analytics, variant = 'c
                         <RankedList title={messages.visitors.cities} rows={cityRows} locale={locale} emptyText="–" />
                         <RankedList title={messages.visitors.referrers} rows={referrerRows} locale={locale} emptyText="–" />
                     </div>
+                </div>
+            )}
+
+            {variant === 'full' && (
+                <div className="mt-6">
+                    <OptOutSwitch />
                 </div>
             )}
 

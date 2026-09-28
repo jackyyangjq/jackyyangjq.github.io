@@ -3,9 +3,6 @@ name: Build and deploy
 on:
   push:
     branches: [main]
-  schedule:
-    # Once a day: refresh the visitor statistics shown on the site
-    - cron: "17 4 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # Public share link of the analytics dashboard (set as a repository variable)
-      UMAMI_SHARE_URL: ${{ vars.UMAMI_SHARE_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,12 +29,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Refresh visitor statistics
-        if: env.UMAMI_SHARE_URL != ''
-        # A failed fetch keeps the last committed statistics instead of breaking the deploy
-        continue-on-error: true
-        run: node scripts/fetch-visitors.mjs
 
       - name: Build site
         run: npm run build

@@ -1,0 +1,4 @@
+# local testing only
+.dev.vars
+.wrangler/
+node_modules/

@@ -44,6 +44,7 @@
   --map-4: #5e0f1b;
   --map-empty: #ebe7e3;
   --map-border: #fcfbf9;
+  --map-dot: #211b1c;
   --chart-bar: #8b1e2d;
   --chart-grid: #e7e4e0;
   
@@ -193,6 +194,7 @@ html[data-locale^="zh"] {
   --map-4: #f5b2be;
   --map-empty: #2b2526;
   --map-border: #141112;
+  --map-dot: #f5f2f0;
   --chart-bar: #e07a88;
   --chart-grid: #332d2e;
 }

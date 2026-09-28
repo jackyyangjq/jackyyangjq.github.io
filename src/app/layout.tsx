@@ -5,6 +5,7 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { LocaleProvider } from '@/components/ui/LocaleProvider';
+import VisitTracker from '@/components/ui/VisitTracker';
 import { getConfig } from '@/lib/config';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
 import type { SiteConfig } from '@/lib/config';
@@ -174,14 +175,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: buildPersonJsonLd(config) }}
         />
-        {analytics?.umami_website_id && analytics.umami_script && (
-          <script
-            defer
-            src={analytics.umami_script}
-            data-website-id={analytics.umami_website_id}
-            data-domains={analytics.domains}
-          />
-        )}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -211,6 +204,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider>
           <LocaleProvider config={runtimeI18n}>
+            <VisitTracker endpoint={analytics?.endpoint} />
             <Navigation
               items={config.navigation}
               siteTitle={config.site.title}

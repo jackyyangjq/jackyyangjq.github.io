@@ -1,0 +1,15 @@
+# Cookie-free visit counter for jackieyangjq.github.io (Cloudflare Worker + D1).
+# Deploy: npx wrangler@4 deploy   (from this folder)
+name = "jackieyangjq-visits"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "site-visits"
+database_id = "7a34cf9a-7bf0-4ecb-92db-ac1b2491db39"
+
+# Delete raw visit records older than about 13 months, once a day
+[triggers]
+crons = ["23 3 * * *"]

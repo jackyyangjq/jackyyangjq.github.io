@@ -69,7 +69,9 @@ for (const f of land50) {
 
 const outDir = path.join(process.cwd(), 'public', 'data');
 fs.mkdirSync(outDir, { recursive: true });
-const out = { width: WIDTH, height: HEIGHT, shapes, centroids };
+// Scale and offset of the Equal Earth projection, so city coordinates can be placed on the same map
+const projectionParams = { scale: projection.scale(), translate: projection.translate() };
+const out = { width: WIDTH, height: HEIGHT, projection: projectionParams, shapes, centroids };
 fs.writeFileSync(path.join(outDir, 'world.json'), JSON.stringify(out));
 const hasOutline = new Set(shapes.map((s) => s.code));
 const dotsOnly = Object.keys(centroids).filter((c) => !hasOutline.has(c));

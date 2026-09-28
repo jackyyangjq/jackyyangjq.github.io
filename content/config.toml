@@ -58,8 +58,9 @@ enable_likes = false
 enable_one_page_mode = false
 
 [analytics]
-# Filled in once the analytics account exists; the visitor map reads map_data.
-map_data = "/data/visitors.json"
+# The site's own cookie-free visit counter (source in analytics/)
+endpoint = "https://jackieyangjq-visits.jackieyangjq.workers.dev"
+map_data = "https://jackieyangjq-visits.jackieyangjq.workers.dev/stats.json"
 
 [i18n]
 enabled = true

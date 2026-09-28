@@ -75,6 +75,11 @@ export interface LocaleMessages {
     place: string;
     source: string;
     mapLabel: string;
+    cityDot: string;
+    optOut: string;
+    optIn: string;
+    optOutHint: string;
+    optedOut: string;
   };
 }
 
@@ -135,26 +140,31 @@ const en: LocaleMessages = {
     countries: 'Countries and regions',
     cities: 'Cities',
     referrers: 'Came from',
-    visitors: 'Visitors',
+    visitors: 'Visits',
     pageviews: 'Page views',
-    fullStats: 'Full live statistics',
-    loading: 'Loading visitor data…',
-    unavailable: 'Visitor data is not available right now.',
+    fullStats: 'Full statistics',
+    loading: 'Loading visit data…',
+    unavailable: 'Visit data could not be loaded (a privacy or ad-blocking extension may be blocking it).',
     direct: 'Direct or bookmark',
     updated: 'Updated',
-    privacy: 'Counted with cookie-free analytics. No personal data is stored; places are estimated from network addresses and can be approximate.',
+    privacy: "Counted by this site's own counter: no cookies, no IP addresses or browser details stored. A visit is counted once per browser session; places are estimated from network addresses and can be approximate.",
     since: 'Since',
     seeDetails: 'Cities, sources and daily visits',
     noneYet: 'No visits recorded yet: counting has just started.',
     legendNone: 'None',
-    visitorUnit: 'visitor',
-    visitorsUnit: 'visitors',
-    daily: 'Visitors per day, last 30 days',
+    visitorUnit: 'visit',
+    visitorsUnit: 'visits',
+    daily: 'Visits per day, last 30 days',
     showTable: 'Show as table',
     date: 'Date',
     place: 'Place',
     source: 'Source',
-    mapLabel: 'World map shaded by number of visitors from each country or region',
+    mapLabel: 'World map shaded by the number of visits from each country or region, with dots for cities',
+    cityDot: 'city',
+    optOut: "Don't count my visits",
+    optIn: 'Count them again',
+    optOutHint: 'You can stop your visits from this browser being counted.',
+    optedOut: 'Your visits from this browser are not counted.',
   },
 
 };
@@ -216,26 +226,31 @@ const zh: LocaleMessages = {
     countries: '国家和地区',
     cities: '城市',
     referrers: '来源',
-    visitors: '访客',
+    visitors: '访问',
     pageviews: '浏览量',
-    fullStats: '完整实时统计',
-    loading: '正在加载访客数据…',
-    unavailable: '暂时无法获取访客数据。',
+    fullStats: '完整统计',
+    loading: '正在加载访问数据…',
+    unavailable: '访问数据暂时无法加载（可能被隐私或广告拦截插件屏蔽）。',
     direct: '直接访问或书签',
     updated: '更新于',
-    privacy: '使用不设 cookie 的统计服务，不保存个人信息；地点根据网络地址估算，可能有偏差。',
+    privacy: '由本站自己的计数程序统计：不用 cookie，不保存 IP 地址和浏览器信息。同一浏览器会话只算一次访问；地点根据网络地址估算，可能有偏差。',
     since: '统计起始',
     seeDetails: '城市、来源和每日访问',
     noneYet: '刚开始统计，暂时还没有访问记录。',
     legendNone: '无',
-    visitorUnit: '位访客',
-    visitorsUnit: '位访客',
-    daily: '最近 30 天每日访客',
+    visitorUnit: '次访问',
+    visitorsUnit: '次访问',
+    daily: '最近 30 天每日访问',
     showTable: '以表格显示',
     date: '日期',
     place: '地点',
     source: '来源',
-    mapLabel: '按各国家和地区访客人数着色的世界地图',
+    mapLabel: '按各国家和地区访问次数着色的世界地图，圆点表示城市',
+    cityDot: '城市',
+    optOut: '不统计我的访问',
+    optIn: '恢复统计',
+    optOutHint: '你可以让这个浏览器上的访问不被统计。',
+    optedOut: '你在这个浏览器上的访问不会被统计。',
   },
 
 };
