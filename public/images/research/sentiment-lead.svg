@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 270" role="img" aria-labelledby="t d">
+  <title id="t">Design sketch: which series moves first</title>
+  <desc id="d">Three stylised daily series stacked vertically: online sentiment dips first, talk of avoiding the destination rises next, and visitor arrivals dip last. Arrows show the order. No real data.</desc>
+  <style>
+    .h{font:600 13px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
+    .m{font:400 11.5px Inter,Helvetica,Arial,sans-serif;fill:#78716c}
+    .s{fill:none;stroke:#57534e;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+    .e{fill:none;stroke:#8b1e2d;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+    .g{stroke:#d6d3d1;stroke-width:1;stroke-dasharray:3 3}
+    .a{fill:none;stroke:#8b1e2d;stroke-width:1.4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b1e2d"/>
+    </marker>
+  </defs>
+  <rect width="360" height="270" fill="#ffffff"/>
+
+  <line class="g" x1="100" y1="36" x2="100" y2="92"/>
+  <line class="g" x1="160" y1="112" x2="160" y2="174"/>
+  <line class="g" x1="222" y1="196" x2="222" y2="254"/>
+
+  <text class="h" x="344" y="30" text-anchor="end">online sentiment</text>
+  <polyline class="s" points="16,58 30,56 44,59 58,57 72,58 82,58"/>
+  <polyline class="e" points="82,58 92,66 100,80 110,70 120,60"/>
+  <polyline class="s" points="120,60 136,57 152,59 170,57 190,58 214,57 240,59 266,57 292,58 318,57 344,58"/>
+
+  <text class="h" x="344" y="114" text-anchor="end">talk of avoiding it</text>
+  <polyline class="s" points="16,150 40,151 64,149 88,150 112,151 136,150 144,150"/>
+  <polyline class="e" points="144,150 152,140 160,124 170,136 180,148"/>
+  <polyline class="s" points="180,148 200,150 224,149 248,151 272,150 296,149 320,151 344,150"/>
+
+  <text class="h" x="344" y="198" text-anchor="end">visitor arrivals</text>
+  <polyline class="s" points="16,222 40,221 64,223 88,221 112,222 136,223 160,221 184,222 204,222"/>
+  <polyline class="e" points="204,222 214,232 222,246 234,238 246,228"/>
+  <polyline class="s" points="246,228 262,224 280,222 300,223 322,221 344,222"/>
+
+  <path class="a" d="M106,84 C126,100 138,110 152,124" marker-end="url(#arrow)"/>
+  <path class="a" d="M166,154 C184,180 198,212 214,236" marker-end="url(#arrow)"/>
+
+  <line x1="16" y1="262" x2="344" y2="262" stroke="#e7e4e0" stroke-width="1"/>
+  <text class="m" x="16" y="258">earlier</text>
+  <text class="m" x="344" y="258" text-anchor="end">later</text>
+</svg>

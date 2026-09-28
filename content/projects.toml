@@ -1,0 +1,104 @@
+type = "card"
+title = "Projects"
+description = "Open code that shows how I work: methods checked on data where the answer is known, measurement validated before it is trusted, and tools that run every day on their own."
+
+[[groups]]
+title = "Research methods in code"
+
+[[groups.items]]
+title = "Statistics and econometrics toolkit"
+subtitle = "Python · simulated data with known answers"
+content = "Statistics and econometrics I use in research, each checked on simulated data: staggered DiD, quantile regression with fixed effects, VAR, bounded-outcome models, change points."
+image = "/images/projects/did-event-study.webp"
+image_alt = "Event study on a simulated staggered rollout: three estimators plotted against the true effect"
+tags = ["Causal inference", "Time series", "Simulation"]
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+
+[[groups.items]]
+title = "Measuring text with an LLM"
+subtitle = "Python · 998 public hotel reviews"
+content = "LLM labelling of 998 hotel reviews, validated six ways: 94.6% agreement with the guests' own liked/disliked split, alpha 0.93 against a second model, no false labels on controls."
+image = "/images/projects/llm-validation.webp"
+image_alt = "Agreement of LLM labels with a repeat run, a second model and cheaper baselines, by review aspect"
+tags = ["LLM", "Text as data", "Reliability"]
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/llm-text-measurement"
+
+[[groups.items]]
+title = "Machine-learning inflation forecasts"
+subtitle = "Python · replication of Medeiros et al. (2021)"
+content = "Machine-learning forecasts of US inflation from 121 FRED-MD series. Tree models cut forecast error by 15–20% against an AR benchmark in 2001–2015, but not since 2020."
+image = "/images/projects/inflation-forecasts.webp"
+image_alt = "US inflation over the next 12 months: realised values against random-forest and AR forecasts"
+tags = ["Forecasting", "Machine learning", "Replication"]
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/ml-inflation-forecasting"
+
+[[groups]]
+title = "Tools and apps"
+layout = "grid"
+
+[[groups.items]]
+title = "Filings Q&A agent"
+subtitle = "Python · SEC 10-K and 10-Q filings"
+content = "Question answering over SEC filings with a checkable source for every sentence, a tool-using research agent, and a 50-question retrieval evaluation (keyword search 95% correct)."
+tags = ["Retrieval", "Agents", "Evaluation"]
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/filings-qa-agent"
+
+[[groups.items]]
+title = "Finfluencer digest"
+subtitle = "Python · runs every morning on GitHub Actions"
+content = "Daily digest of stock calls: Gemini watches 16 YouTube finance channels and X accounts, extracts each call and sums up the consensus. Multi-model fallback, scheduled runs, source-checked news."
+tags = ["Multimodal LLM", "Automation"]
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/finfluencer-digest"
+
+[[groups.items]]
+title = "Call tracker for a portfolio dashboard"
+subtitle = "Fork of an open-source dashboard · Python"
+content = "Adds broker sync and a tracker that scores stock calls against later prices. Four pull requests upstream."
+image = "/images/projects/call-tracker.webp"
+image_alt = "Call tracker screen comparing sources of stock calls, using fictional demo data"
+tags = ["FastAPI", "Open source"]
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/catfolio"
+
+[[groups.items]]
+title = "Calorie tracker"
+subtitle = "Single-file web app · works offline"
+content = "Recognises food from photos with a vision model and calibrates calorie estimates against real weight data. 24 releases in six weeks."
+tags = ["Vision model", "Web app"]
+[[groups.items.links]]
+label = "Try it"
+href = "https://jackieyangjq.github.io/caltrk/"
+[[groups.items.links]]
+label = "Code"
+href = "https://github.com/jackieyangjq/caltrk"
+
+[[groups]]
+title = "Open-source contributions"
+layout = "grid"
+
+[[groups.items]]
+title = "ClaudeCodeUsage (VS Code extension)"
+subtitle = "TypeScript · merged September 2026"
+content = "Cached the dashboard's date-label formatter so repeated inputs are computed once (fixes issue #99)."
+[[groups.items.links]]
+label = "Pull request #115"
+href = "https://github.com/ClaudeCodeUsage/ClaudeCodeUsage/pull/115"
+
+[[groups.items]]
+title = "catfolio (portfolio dashboard)"
+subtitle = "Python · four pull requests, September 2026"
+content = "Hong Kong ticker padding and HKD exchange rates, dead-link fixes, broker account sync, and the call-tracker workspace."
+[[groups.items.links]]
+label = "Pull requests"
+href = "https://github.com/irrwood/catfolio/pulls?q=author%3Ajackieyangjq"

@@ -1,0 +1,106 @@
+# Pages built but not listed in the top menu
+extra_pages = ["visitors"]
+
+[site]
+title = "Jiaqi (Jacky) Yang"
+description = "Jiaqi (Jacky) Yang is a dual PhD candidate at The Hong Kong Polytechnic University and the University of Surrey, working on causal inference, time series and large language models for tourism, hospitality and policy research."
+favicon = "/favicon.svg"
+last_updated = "28 September 2026"
+url = "https://jackieyangjq.github.io"
+og_image = "/images/og.jpg"
+keywords = [
+  "Jiaqi Yang",
+  "Jacky Yang",
+  "Tourism economics",
+  "Hospitality technology",
+  "Causal inference",
+  "Difference-in-differences",
+  "Large language models",
+  "Text as data",
+  "Time series",
+]
+
+[author]
+name = "Jiaqi (Jacky) Yang"
+title = "Dual PhD Candidate"
+institution = "The Hong Kong Polytechnic University & University of Surrey"
+affiliations = [
+  "The Hong Kong Polytechnic University",
+  "University of Surrey",
+]
+alternate_names = ["Jacky Yang", "杨嘉琦"]
+avatar = "/images/avatar.jpg"
+
+[[cv]]
+label = "Academic CV"
+href = "/files/Jiaqi_Yang_CV_Academic.pdf"
+note = "Research and teaching"
+
+[[cv]]
+label = "Industry CV"
+href = "/files/Jiaqi_Yang_CV_Industry.pdf"
+note = "Data science, AI and quantitative research"
+
+[social]
+# Contact information (leave blank or delete to hide)
+emails = [
+  "jiaqi.yang@surrey.ac.uk",
+  "jiaqi-jacky.yang@connect.polyu.hk",
+]
+github = "https://github.com/jackieyangjq"
+linkedin = "https://www.linkedin.com/in/jiaqi-yang-7b8813326"
+
+[features]
+# Show a like button on the about page (stored only in the visitor's browser)
+enable_likes = false
+
+# Display all subpages on a single page
+enable_one_page_mode = false
+
+[analytics]
+# Filled in once the analytics account exists; the visitor map reads map_data.
+map_data = "/data/visitors.json"
+
+[i18n]
+enabled = true
+locales = ["en", "zh"]
+default_locale = "en"
+# "fixed": everyone starts in English and can switch; the choice is remembered.
+mode = "fixed"
+fixed_locale = "en"
+persist = true
+switcher = true
+
+[i18n.labels]
+zh = "中文"
+en = "English"
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Research"
+type = "page"
+target = "research"
+href = "/research"
+
+[[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
+title = "Teaching"
+type = "page"
+target = "teaching"
+href = "/teaching"
+
+[[navigation]]
+title = "CV"
+type = "page"
+target = "cv"
+href = "/cv"

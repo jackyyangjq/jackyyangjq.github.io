@@ -1,0 +1,39 @@
+type = "about"
+title = "About"
+
+[profile]
+research_interests = [
+  "AI and digital technology in tourism and hospitality",
+  "Technology adoption in service firms",
+  "Large language models for text measurement",
+  "Tourism and hospitality economics",
+  "Policy evaluation and causal inference",
+]
+
+[[sections]]
+id = "about"
+type = "markdown"
+source = "bio.md"
+title = "About"
+
+[[sections]]
+id = "highlights"
+type = "research_highlights"
+source = "research.toml"
+group = "working-papers"
+href = "/research"
+title = "Working Papers"
+limit = 3
+
+[[sections]]
+id = "news"
+type = "list"
+source = "news.toml"
+title = "News"
+limit = 8
+
+[[sections]]
+id = "visitors"
+type = "visitors"
+title = "Visitors"
+description = "Where visitors to this site come from."

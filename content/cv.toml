@@ -1,0 +1,14 @@
+type = "text"
+title = "CV"
+description = "The full CVs are available as PDFs. A summary follows."
+source = "cv.md"
+
+[[downloads]]
+label = "Academic CV (PDF)"
+href = "/files/Jiaqi_Yang_CV_Academic.pdf"
+note = "Research and teaching"
+
+[[downloads]]
+label = "Industry CV (PDF)"
+href = "/files/Jiaqi_Yang_CV_Industry.pdf"
+note = "Data science, AI and quantitative research"

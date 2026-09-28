@@ -1,0 +1,14 @@
+type = "text"
+title = "简历"
+description = "完整简历为英文 PDF，以下是摘要。"
+source = "cv.md"
+
+[[downloads]]
+label = "学术版简历（PDF）"
+href = "/files/Jiaqi_Yang_CV_Academic.pdf"
+note = "研究与教学岗位"
+
+[[downloads]]
+label = "业界版简历（PDF）"
+href = "/files/Jiaqi_Yang_CV_Industry.pdf"
+note = "数据科学、AI 与量化研究岗位"

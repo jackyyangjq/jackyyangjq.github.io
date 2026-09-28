@@ -1,0 +1,31 @@
+type = "card"
+title = "Teaching"
+description = "Teaching interests: tourism and hospitality economics, financial management in hospitality, business analytics and AI in service industries, and research methods and econometrics."
+
+[[items]]
+title = "Financial Management in Hospitality, Tourism and Events (HTM3222)"
+subtitle = "Teaching assistant · The Hong Kong Polytechnic University"
+date = "Spring 2025"
+content = "Ran three weekly tutorial groups for 82 undergraduates on the BSc (Hons) in Hotel and Tourism Management, covering financial statement analysis, bonds and project cash flows. Built spreadsheet exercises from a hotel group's annual report, supported three individual assignments and a group analysis project, assessed group presentations and held weekly consultation hours."
+tags = ["Undergraduate", "Corporate finance", "Tutorials"]
+
+[[items]]
+title = "AI in Digital Marketing"
+subtitle = "Invited session · ODOS Digital Summer Camp, Surrey Business School"
+date = "May 2026"
+content = "A half-day interactive session for scholarship students from Thailand on the One District One Scholarship (ODOS) digital summer camp: how AI is changing marketing, brand cases, virtual influencers, a team challenge to design an AI-assisted ad campaign, and the ethics of AI in marketing."
+tags = ["Workshop", "AI", "Marketing"]
+
+[[items]]
+title = "Smart Check-In: Where Technology Meets the First Impression"
+subtitle = "Guest lecture · MSc students, Surrey Business School"
+date = "April 2026"
+content = "How hotel check-in has changed, the technology now used at the front desk, and what research, including my PhD studies, says about its effects on hotel operations and guests."
+tags = ["Postgraduate", "Hospitality technology"]
+
+[[items]]
+title = "Becoming an Effective Teaching Assistant"
+subtitle = "Training · The Hong Kong Polytechnic University"
+date = "2024"
+content = "Completed PolyU's training programme for teaching assistants."
+tags = ["Training"]

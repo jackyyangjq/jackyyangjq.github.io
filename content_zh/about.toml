@@ -1,0 +1,39 @@
+type = "about"
+title = "关于我"
+
+[profile]
+research_interests = [
+  "旅游与酒店业中的人工智能和数字技术",
+  "服务企业的技术采纳",
+  "用大语言模型测量文本",
+  "旅游与酒店经济学",
+  "政策评估与因果推断",
+]
+
+[[sections]]
+id = "about"
+type = "markdown"
+source = "bio.md"
+title = "关于我"
+
+[[sections]]
+id = "highlights"
+type = "research_highlights"
+source = "research.toml"
+group = "working-papers"
+href = "/research"
+title = "在审论文"
+limit = 3
+
+[[sections]]
+id = "news"
+type = "list"
+source = "news.toml"
+title = "动态"
+limit = 8
+
+[[sections]]
+id = "visitors"
+type = "visitors"
+title = "访客"
+description = "本站访客来自哪里。"

@@ -1,0 +1,147 @@
+type = "research"
+title = "研究"
+description = "我研究数字技术和公共政策如何改变旅游与酒店市场，方法上结合因果推断、时间序列模型，以及把大语言模型当作文本测量工具。"
+methods_title = "方法与工具"
+methods_description = "每一类方法都附有公开代码，在模拟数据或公开数据上运行，不涉及保密的研究数据，可以直接核对实现是否正确。"
+note = "在审论文不展示估计结果和原图，以尊重审稿流程。示意图只画研究设计，不代表结果。"
+
+[[groups]]
+id = "working-papers"
+title = "在审论文"
+
+[[groups.items]]
+title = "旅行便利化政策与当地房价：分批推行的政策评估"
+status = "修改后再审"
+venue = "Annals of Tourism Research"
+authorship = "合作论文 · 通讯作者"
+summary = "东亚某国分地区推行的一项旅行便利化政策，用房屋交易层面的数据研究。"
+finding = "政策覆盖地区的房价上涨；效应在几年后才显现，部分通过游客流量的影响起作用。"
+figure = "/images/research/staggered-policy.svg"
+figure_alt = "研究设计示意：各地区分批实施政策，估计效应在滞后一段时间后才上升。并非真实估计结果。"
+figure_caption = "研究设计示意，非估计结果。"
+methods = ["分批实施的双重差分", "事件研究", "Sun–Abraham 估计量", "空间相关（Conley）标准误", "安慰剂与随机化检验"]
+[[groups.items.links]]
+label = "方法代码（模拟数据）"
+href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+
+[[groups.items]]
+title = "网络情绪、回避言论与游客到访"
+status = "修改后再审（第二轮）"
+venue = "Journal of Travel Research"
+authorship = "合作论文"
+summary = "用社交媒体帖子构建亚洲某城市目的地的每日指标，与官方游客到访数据相连接。"
+finding = "网络情绪的变化先于“表示会避开该地”的言论变化，而后者又先于到访人数的变化。"
+figure = "/images/research/sentiment-lead.svg"
+figure_alt = "研究设计示意：三条每日序列中，情绪最先变化，回避言论其次，到访人数最后。并非真实数据。"
+figure_caption = "研究设计示意，非估计结果。"
+methods = ["大模型方面级情感分析", "信度检验", "单位根检验", "VAR 与格兰杰因果", "脉冲响应"]
+[[groups.items.links]]
+label = "文本测量代码"
+href = "https://github.com/jackieyangjq/llm-text-measurement"
+
+[[groups.items]]
+title = "碳交易试点与企业绿色转型：基于文本的指数"
+status = "修改后再审（第二轮）"
+venue = "Journal of Cleaner Production"
+authorship = "合作论文 · 第一作者"
+summary = "一个新兴经济体分批在各地区推出碳排放权交易试点，用上市公司面板数据和一个部分基于年报文本构建的绿色转型新指数研究。"
+figure = "/images/research/green-index-design.svg"
+figure_alt = "研究设计示意：年报文本用于构建企业层面的绿色指数，分批启动的试点用分批实施的双重差分比较。"
+figure_caption = "研究设计示意。"
+methods = ["分批实施的 DID（Callaway–Sant'Anna）", "Goodman-Bacon 分解", "词向量扩展词典", "CRITIC 与熵权赋权", "自助法中介检验"]
+
+[[groups]]
+id = "in-progress"
+title = "进行中的研究"
+description = "投稿前只介绍研究主题和方法。"
+
+[[groups.items]]
+title = "自助服务技术与酒店绩效"
+status = "博士论文 · 准备中"
+summary = "两项研究，考察自助入住技术如何改变酒店运营和住客体验，使用大规模运营数据和在线评论。"
+methods = ["多层方差分解", "带固定效应的分位数回归", "计数结果的分批实施 DID", "用大模型测量评论文本"]
+
+[[groups.items]]
+title = "上市公司如何在披露中描述新技术"
+status = "准备中"
+summary = "测量企业如何向投资者介绍“自动化”与“增强”两类技术战略。早期版本获 CHME 2026 总最佳论文奖。"
+methods = ["带原文证据的大模型分类", "按置信度转人工复核", "有界结果的面板模型"]
+
+[[groups]]
+id = "publications"
+title = "已发表"
+
+[[groups.items]]
+title = "Economic consequences and mechanisms of China's carbon emissions trading policies: A literature review"
+venue = "Journal of Intelligent Society, 2(6), 63–92（2023）"
+authorship = "Yang, J., & Qi, J."
+
+[[method_areas]]
+title = "政策评估的因果推断"
+methods = [
+  "分批实施的 DID：双向固定效应与 Callaway–Sant'Anna、Sun–Abraham 对比",
+  "Goodman-Bacon 分解、事件研究",
+  "随机化推断、Conley 标准误",
+  "平行趋势敏感性分析（HonestDiD）、功效模拟",
+]
+[method_areas.link]
+label = "计量方法工具箱"
+href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+
+[[method_areas]]
+title = "文本数据与大模型"
+methods = [
+  "要求逐字引用原文证据的大模型标注",
+  "信度：Krippendorff α、κ、重复运行与跨模型检验",
+  "检查模型是否编造标签的阴性对照",
+  "词向量词典、蒸馏小模型",
+]
+[method_areas.link]
+label = "大模型文本测量"
+href = "https://github.com/jackieyangjq/llm-text-measurement"
+
+[[method_areas]]
+title = "时间序列"
+methods = [
+  "单位根检验、VAR、格兰杰因果",
+  "带自助法置信带的脉冲响应",
+  "变点检测（PELT）、Bass 扩散模型",
+  "滚动 Z 值预警",
+]
+[method_areas.link]
+label = "计量方法工具箱"
+href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+
+[[method_areas]]
+title = "多层模型与分布分析"
+methods = [
+  "组内相关系数、分层回归",
+  "Shapley–Owen R² 分解",
+  "带固定效应的分位数回归（MMQR）",
+  "野自助法聚类推断、生存模型",
+]
+[method_areas.link]
+label = "计量方法工具箱"
+href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+
+[[method_areas]]
+title = "机器学习预测"
+methods = [
+  "LASSO、随机森林、XGBoost",
+  "滚动窗口评估、Diebold–Mariano 检验",
+  "模型置信集、SHAP 解释",
+]
+[method_areas.link]
+label = "通胀预测"
+href = "https://github.com/jackieyangjq/ml-inflation-forecasting"
+
+[[method_areas]]
+title = "软件"
+methods = [
+  "Python（pandas、statsmodels、scikit-learn）、R、Stata、SQL",
+  "大模型接口、检索增强、会调用工具的智能体",
+  "Git、自动化测试、GitHub Actions",
+]
+[method_areas.link]
+label = "GitHub"
+href = "https://github.com/jackieyangjq"

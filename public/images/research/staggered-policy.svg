@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 270" role="img" aria-labelledby="t d">
+  <title id="t">Design sketch: a policy rolled out region by region</title>
+  <desc id="d">Top: a grid of regions by years; the policy switches on in waves, and one group never adopts. Bottom: a stylised event-study curve that stays flat before adoption and rises only after a lag. No real data.</desc>
+  <style>
+    .h{font:600 13px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
+    .m{font:400 11.5px Inter,Helvetica,Arial,sans-serif;fill:#78716c}
+    .on{fill:#8b1e2d}.off{fill:#ebe7e3}
+  </style>
+  <rect width="360" height="270" fill="#ffffff"/>
+  <text class="h" x="16" y="22">Policy switches on in waves</text>
+  <g id="grid">
+    <text class="m" x="58" y="47" text-anchor="end">wave 1</text>
+    <text class="m" x="58" y="65" text-anchor="end">wave 1</text>
+    <text class="m" x="58" y="83" text-anchor="end">wave 2</text>
+    <text class="m" x="58" y="101" text-anchor="end">wave 3</text>
+    <text class="m" x="58" y="119" text-anchor="end">never</text>
+  </g>
+  <g id="cells"><rect class="off" x="64" y="36" width="26" height="14" rx="2"/><rect class="off" x="94" y="36" width="26" height="14" rx="2"/><rect class="on" x="124" y="36" width="26" height="14" rx="2"/><rect class="on" x="154" y="36" width="26" height="14" rx="2"/><rect class="on" x="184" y="36" width="26" height="14" rx="2"/><rect class="on" x="214" y="36" width="26" height="14" rx="2"/><rect class="on" x="244" y="36" width="26" height="14" rx="2"/><rect class="on" x="274" y="36" width="26" height="14" rx="2"/><rect class="on" x="304" y="36" width="26" height="14" rx="2"/><rect class="off" x="64" y="54" width="26" height="14" rx="2"/><rect class="off" x="94" y="54" width="26" height="14" rx="2"/><rect class="on" x="124" y="54" width="26" height="14" rx="2"/><rect class="on" x="154" y="54" width="26" height="14" rx="2"/><rect class="on" x="184" y="54" width="26" height="14" rx="2"/><rect class="on" x="214" y="54" width="26" height="14" rx="2"/><rect class="on" x="244" y="54" width="26" height="14" rx="2"/><rect class="on" x="274" y="54" width="26" height="14" rx="2"/><rect class="on" x="304" y="54" width="26" height="14" rx="2"/><rect class="off" x="64" y="72" width="26" height="14" rx="2"/><rect class="off" x="94" y="72" width="26" height="14" rx="2"/><rect class="off" x="124" y="72" width="26" height="14" rx="2"/><rect class="off" x="154" y="72" width="26" height="14" rx="2"/><rect class="on" x="184" y="72" width="26" height="14" rx="2"/><rect class="on" x="214" y="72" width="26" height="14" rx="2"/><rect class="on" x="244" y="72" width="26" height="14" rx="2"/><rect class="on" x="274" y="72" width="26" height="14" rx="2"/><rect class="on" x="304" y="72" width="26" height="14" rx="2"/><rect class="off" x="64" y="90" width="26" height="14" rx="2"/><rect class="off" x="94" y="90" width="26" height="14" rx="2"/><rect class="off" x="124" y="90" width="26" height="14" rx="2"/><rect class="off" x="154" y="90" width="26" height="14" rx="2"/><rect class="off" x="184" y="90" width="26" height="14" rx="2"/><rect class="off" x="214" y="90" width="26" height="14" rx="2"/><rect class="on" x="244" y="90" width="26" height="14" rx="2"/><rect class="on" x="274" y="90" width="26" height="14" rx="2"/><rect class="on" x="304" y="90" width="26" height="14" rx="2"/><rect class="off" x="64" y="108" width="26" height="14" rx="2"/><rect class="off" x="94" y="108" width="26" height="14" rx="2"/><rect class="off" x="124" y="108" width="26" height="14" rx="2"/><rect class="off" x="154" y="108" width="26" height="14" rx="2"/><rect class="off" x="184" y="108" width="26" height="14" rx="2"/><rect class="off" x="214" y="108" width="26" height="14" rx="2"/><rect class="off" x="244" y="108" width="26" height="14" rx="2"/><rect class="off" x="274" y="108" width="26" height="14" rx="2"/><rect class="off" x="304" y="108" width="26" height="14" rx="2"/></g>
+  <text class="m" x="330" y="140" text-anchor="end">years →</text>
+  <line x1="36" y1="226" x2="336" y2="226" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="150" y1="174" x2="150" y2="248" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3"/>
+  <text class="h" x="16" y="166">Effect, by years since adoption</text>
+  <polyline fill="none" stroke="#8b1e2d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+    points="58,226 80,224 102,227 124,225 172,225 194,222 216,211 238,198 260,188 282,180 304,175 326,172"/>
+  <g fill="#8b1e2d" stroke="#ffffff" stroke-width="1.5">
+    <circle cx="58" cy="226" r="3.5"/><circle cx="80" cy="224" r="3.5"/><circle cx="102" cy="227" r="3.5"/><circle cx="124" cy="225" r="3.5"/>
+    <circle cx="172" cy="225" r="3.5"/><circle cx="194" cy="222" r="3.5"/><circle cx="216" cy="211" r="3.5"/><circle cx="238" cy="198" r="3.5"/>
+    <circle cx="260" cy="188" r="3.5"/><circle cx="282" cy="180" r="3.5"/><circle cx="304" cy="175" r="3.5"/><circle cx="326" cy="172" r="3.5"/>
+  </g>
+  <text class="m" x="150" y="262" text-anchor="middle">adoption</text>
+  <text class="m" x="336" y="246" text-anchor="end">builds after a lag</text>
+  <text class="m" x="36" y="246">before</text>
+</svg>

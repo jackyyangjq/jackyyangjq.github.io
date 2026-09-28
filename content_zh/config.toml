@@ -1,0 +1,54 @@
+[site]
+title = "杨嘉琦"
+description = "杨嘉琦（Jiaqi Yang），香港理工大学与萨里大学双博士候选人，研究因果推断、时间序列和大语言模型在旅游、酒店与政策研究中的应用。"
+last_updated = "2026 年 9 月 28 日"
+
+[author]
+name = "杨嘉琦"
+name_note = "Jiaqi (Jacky) Yang"
+title = "双博士候选人"
+institution = "香港理工大学 · 萨里大学"
+affiliations = [
+  "香港理工大学",
+  "英国萨里大学",
+]
+
+[[cv]]
+label = "学术版简历"
+href = "/files/Jiaqi_Yang_CV_Academic.pdf"
+note = "研究与教学岗位（英文）"
+
+[[cv]]
+label = "业界版简历"
+href = "/files/Jiaqi_Yang_CV_Industry.pdf"
+note = "数据科学、AI 与量化研究岗位（英文）"
+
+[[navigation]]
+title = "关于我"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "研究"
+type = "page"
+target = "research"
+href = "/research"
+
+[[navigation]]
+title = "项目"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
+title = "教学"
+type = "page"
+target = "teaching"
+href = "/teaching"
+
+[[navigation]]
+title = "简历"
+type = "page"
+target = "cv"
+href = "/cv"

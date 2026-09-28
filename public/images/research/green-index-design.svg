@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 270" role="img" aria-labelledby="t d">
+  <title id="t">Design sketch: a text-based index and a staggered policy</title>
+  <desc id="d">Top: annual reports are read with a dictionary expanded by word embeddings and combined with other indicators into a firm-level index. Bottom: pilot programmes start in waves, with a group of firms never covered, compared with a staggered difference-in-differences estimator. No results shown.</desc>
+  <style>
+    .h{font:600 13px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
+    .b{font:500 12px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
+    .m{font:400 11.5px Inter,Helvetica,Arial,sans-serif;fill:#78716c}
+    .box{fill:#faf9f7;stroke:#d6d3d1;stroke-width:1}
+    .key{fill:#f7e9eb;stroke:#8b1e2d;stroke-width:1.2}
+    .doc{fill:#ffffff;stroke:#a8a29e;stroke-width:1}
+    .ln{stroke:#d6d3d1;stroke-width:1.4;stroke-linecap:round}
+    .ar{fill:none;stroke:#78716c;stroke-width:1.3}
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#78716c"/>
+    </marker>
+  </defs>
+  <rect width="360" height="270" fill="#ffffff"/>
+
+  <text class="h" x="16" y="22">Measure</text>
+  <g>
+    <rect class="doc" x="22" y="40" width="34" height="44" rx="2"/>
+    <rect class="doc" x="28" y="34" width="34" height="44" rx="2"/>
+    <rect class="doc" x="34" y="28" width="34" height="44" rx="2"/>
+    <line class="ln" x1="40" y1="38" x2="62" y2="38"/><line class="ln" x1="40" y1="45" x2="62" y2="45"/>
+    <line class="ln" x1="40" y1="52" x2="58" y2="52"/><line class="ln" x1="40" y1="59" x2="62" y2="59"/>
+    <text class="m" x="45" y="102" text-anchor="middle">annual reports</text>
+  </g>
+  <path class="ar" d="M76,58 L104,58" marker-end="url(#arr)"/>
+  <rect class="box" x="108" y="34" width="104" height="48" rx="6"/>
+  <text class="b" x="160" y="54" text-anchor="middle">dictionary +</text>
+  <text class="b" x="160" y="70" text-anchor="middle">word embeddings</text>
+  <path class="ar" d="M216,58 L244,58" marker-end="url(#arr)"/>
+  <rect class="key" x="248" y="34" width="98" height="48" rx="6"/>
+  <text class="b" x="297" y="54" text-anchor="middle">firm-level</text>
+  <text class="b" x="297" y="70" text-anchor="middle">green index</text>
+  <text class="m" x="297" y="100" text-anchor="middle">+ other indicators</text>
+
+  <text class="h" x="16" y="136">Compare</text>
+  <text class="m" x="16" y="160">wave 1</text>
+  <text class="m" x="16" y="180">wave 2</text>
+  <text class="m" x="16" y="200">wave 3</text>
+  <text class="m" x="16" y="220">never</text>
+  <line x1="68" y1="156" x2="226" y2="156" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="68" y1="176" x2="226" y2="176" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="68" y1="196" x2="226" y2="196" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="68" y1="216" x2="226" y2="216" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="104" y1="156" x2="226" y2="156" stroke="#8b1e2d" stroke-width="8" stroke-linecap="round"/>
+  <line x1="136" y1="176" x2="226" y2="176" stroke="#8b1e2d" stroke-width="8" stroke-linecap="round"/>
+  <line x1="180" y1="196" x2="226" y2="196" stroke="#8b1e2d" stroke-width="8" stroke-linecap="round"/>
+  <text class="m" x="226" y="240" text-anchor="end">pilot in force →</text>
+  <path class="ar" d="M238,186 L262,186" marker-end="url(#arr)"/>
+  <rect class="key" x="266" y="162" width="80" height="48" rx="6"/>
+  <text class="b" x="306" y="182" text-anchor="middle">staggered</text>
+  <text class="b" x="306" y="198" text-anchor="middle">DiD</text>
+  <path class="ar" d="M322,108 C330,130 322,146 314,158" marker-end="url(#arr)"/>
+</svg>
