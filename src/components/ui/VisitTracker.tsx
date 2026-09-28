@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLocaleStore } from '@/lib/stores/localeStore';
 
@@ -10,11 +10,17 @@ import { useLocaleStore } from '@/lib/stores/localeStore';
 export const OPT_OUT_KEY = 'jy-no-track';
 const VISIT_KEY = 'jy-visit';
 
+// Kept outside the component: the page tree mounts twice on load (theme provider), and a
+// component-level ref would reset and count the same view twice.
+let lastSentPath: string | null = null;
+
 function trackingAllowed(): boolean {
     if (typeof window === 'undefined') return false;
     if (window.location.hostname !== 'jackyyangjq.github.io') return false;
     const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
     if (nav.doNotTrack === '1' || nav.globalPrivacyControl === true) return false;
+    // Automated browsers (crawlers, link scanners) announce themselves this way
+    if (nav.webdriver) return false;
     try {
         if (localStorage.getItem(OPT_OUT_KEY) === '1') return false;
     } catch {
@@ -37,12 +43,11 @@ function send(endpoint: string, payload: Record<string, unknown>) {
 export default function VisitTracker({ endpoint }: { endpoint?: string }) {
     const pathname = usePathname();
     const locale = useLocaleStore((state) => state.locale);
-    const lastPath = useRef<string | null>(null);
 
     useEffect(() => {
-        if (!endpoint || !trackingAllowed() || lastPath.current === pathname) return;
-        const firstInSession = lastPath.current === null;
-        lastPath.current = pathname;
+        if (!endpoint || !trackingAllowed() || lastSentPath === pathname) return;
+        const firstInSession = lastSentPath === null;
+        lastSentPath = pathname;
 
         let newVisit = 0;
         try {

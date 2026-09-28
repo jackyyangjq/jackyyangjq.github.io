@@ -34,7 +34,7 @@ export const ADMIN_HTML = `<!doctype html>
 <body>
 <main>
   <h1>访问明细</h1>
-  <p class="note">只有你能看。每条记录只有时间、页面、来源、大致地点，不含 IP 地址。时间按香港时间显示。</p>
+  <p class="note">只有你能看。每条记录只有时间、页面、来源、大致地点和所属网络（运营商、大学或公司），不含 IP 地址。时间按香港时间显示。</p>
   <form id="f"><input id="k" type="password" autocomplete="current-password" placeholder="输入访问密钥（只保存在这台设备的浏览器里）"><button>查看</button></form>
   <div id="out"></div>
 </main>
@@ -69,7 +69,7 @@ async function load(key) {
   const wrap = document.createElement('div'); wrap.className = 'wrap';
   const table = document.createElement('table');
   const head = document.createElement('tr');
-  for (const h of ['时间', '类型', '页面', '来源', '城市', '国家或地区', '语言']) { const th = document.createElement('th'); th.textContent = h; head.append(th); }
+  for (const h of ['时间', '类型', '页面', '来源', '城市', '国家或地区', '网络', '语言']) { const th = document.createElement('th'); th.textContent = h; head.append(th); }
   table.append(head);
   for (const e of events) {
     const tr = document.createElement('tr');
@@ -82,6 +82,7 @@ async function load(key) {
       cell(e.referrer || (e.new_visit ? '直接访问' : ''), 'muted'),
       cell(e.city),
       cell(place),
+      cell(e.network, 'muted'),
       cell(e.lang === 'zh' ? '中文' : 'English', 'muted'),
     );
     table.append(tr);

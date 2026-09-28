@@ -124,13 +124,15 @@ async function recordVisit(request, env) {
   const region = typeof cf.region === 'string' && cf.region ? cf.region.slice(0, 80) : null;
   const lat = roundCoord(cf.latitude);
   const lon = roundCoord(cf.longitude);
+  // Name of the network the visit came from (an ISP, university or company); shown only in the private log
+  const network = typeof cf.asOrganization === 'string' && cf.asOrganization ? cf.asOrganization.slice(0, 80) : null;
 
   const ts = new Date().toISOString();
   const day = ts.slice(0, 10);
 
   const statements = [
-    env.DB.prepare('INSERT INTO events (ts, kind, path, referrer, country, region, city, new_visit, lang) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
-      .bind(ts, kind, path, referrer, country, region, city, newVisit, lang),
+    env.DB.prepare('INSERT INTO events (ts, kind, path, referrer, country, region, city, network, new_visit, lang) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+      .bind(ts, kind, path, referrer, country, region, city, network, newVisit, lang),
     env.DB.prepare(
       `INSERT INTO daily (day, visits, pageviews, downloads) VALUES (?, ?, ?, ?)
        ON CONFLICT(day) DO UPDATE SET visits = visits + excluded.visits, pageviews = pageviews + excluded.pageviews, downloads = downloads + excluded.downloads`,
@@ -194,7 +196,7 @@ async function getRecent(request, env) {
     return json({ error: 'unauthorised' }, 0, 401);
   }
   const { results } = await env.DB.prepare(
-    'SELECT ts, kind, path, referrer, country, region, city, new_visit, lang FROM events ORDER BY id DESC LIMIT 300',
+    'SELECT ts, kind, path, referrer, country, region, city, network, new_visit, lang FROM events ORDER BY id DESC LIMIT 300',
   ).all();
   return json({ events: results }, 0);
 }

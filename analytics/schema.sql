@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS events (
   country TEXT,              -- ISO 3166-1 alpha-2
   region TEXT,
   city TEXT,
+  network TEXT,              -- network name (ISP, university, company), private log only
   new_visit INTEGER NOT NULL DEFAULT 0,
   lang TEXT
 );
