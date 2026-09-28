@@ -74,7 +74,7 @@ href = "https://github.com/jackieyangjq/catfolio"
 [[groups.items]]
 title = "Calorie tracker"
 subtitle = "Single-file web app · works offline"
-content = "Recognises food from photos with a vision model and calibrates calorie estimates against real weight data. 24 releases in six weeks."
+content = "Recognises food from photos with a vision model and calibrates calorie estimates against real weight data. 20 versions in seven weeks."
 tags = ["Vision model", "Web app"]
 [[groups.items.links]]
 label = "Try it"

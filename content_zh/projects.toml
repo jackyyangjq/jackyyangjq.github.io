@@ -74,7 +74,7 @@ href = "https://github.com/jackieyangjq/catfolio"
 [[groups.items]]
 title = "热量记录"
 subtitle = "单文件网页应用 · 可离线使用"
-content = "用视觉模型识别食物照片，用真实体重数据校准热量估计。六周发布 24 个版本。"
+content = "用视觉模型识别食物照片，用真实体重数据校准热量估计。七周发布 20 个版本。"
 tags = ["视觉模型", "网页应用"]
 [[groups.items.links]]
 label = "在线使用"
