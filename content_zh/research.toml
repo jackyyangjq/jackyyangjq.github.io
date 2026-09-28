@@ -22,7 +22,7 @@ figure_caption = "研究设计示意，非估计结果。"
 methods = ["分批实施的双重差分", "事件研究", "Sun–Abraham 估计量", "空间相关（Conley）标准误", "安慰剂与随机化检验"]
 [[groups.items.links]]
 label = "方法代码（模拟数据）"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[groups.items]]
 title = "Destination sentiment climate and tourist demand: LLM-based aspect sentiment, avoidance signals, and time-series evidence"
@@ -37,7 +37,7 @@ figure_caption = "研究设计示意，非估计结果。"
 methods = ["大模型方面级情感分析", "信度检验", "单位根检验", "VAR 与格兰杰因果", "脉冲响应"]
 [[groups.items.links]]
 label = "文本测量代码"
-href = "https://github.com/jackieyangjq/llm-text-measurement"
+href = "https://github.com/jackyyangjq/llm-text-measurement"
 
 [[groups.items]]
 title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
@@ -78,7 +78,7 @@ methods = [
 ]
 [method_areas.link]
 label = "计量方法工具箱"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[method_areas]]
 title = "文本数据与大模型"
@@ -90,7 +90,7 @@ methods = [
 ]
 [method_areas.link]
 label = "大模型文本测量"
-href = "https://github.com/jackieyangjq/llm-text-measurement"
+href = "https://github.com/jackyyangjq/llm-text-measurement"
 
 [[method_areas]]
 title = "时间序列"
@@ -102,7 +102,7 @@ methods = [
 ]
 [method_areas.link]
 label = "计量方法工具箱"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[method_areas]]
 title = "多层模型与分布分析"
@@ -114,7 +114,7 @@ methods = [
 ]
 [method_areas.link]
 label = "计量方法工具箱"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[method_areas]]
 title = "机器学习预测"
@@ -125,7 +125,7 @@ methods = [
 ]
 [method_areas.link]
 label = "通胀预测"
-href = "https://github.com/jackieyangjq/ml-inflation-forecasting"
+href = "https://github.com/jackyyangjq/ml-inflation-forecasting"
 
 [[method_areas]]
 title = "软件"
@@ -136,4 +136,4 @@ methods = [
 ]
 [method_areas.link]
 label = "GitHub"
-href = "https://github.com/jackieyangjq"
+href = "https://github.com/jackyyangjq"

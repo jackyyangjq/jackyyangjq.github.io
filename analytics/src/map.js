@@ -39,7 +39,7 @@ export function renderMapSvg(stats) {
   const H = mapH + 46;
 
   const parts = [];
-  parts.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="World map of visits to jackieyangjq.github.io">`);
+  parts.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="World map of visits to jackyyangjq.github.io">`);
   parts.push(`<rect width="${W}" height="${H}" rx="14" fill="${SURFACE}"/>`);
   for (const shape of world.shapes) {
     const v = byCountry.get(shape.code) || 0;

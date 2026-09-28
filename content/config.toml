@@ -6,7 +6,7 @@ title = "Jiaqi (Jacky) Yang"
 description = "Jiaqi (Jacky) Yang is a dual PhD candidate at The Hong Kong Polytechnic University and the University of Surrey, working on causal inference, time series and large language models for tourism, hospitality and policy research."
 favicon = "/favicon.svg"
 last_updated = "28 September 2026"
-url = "https://jackieyangjq.github.io"
+url = "https://jackyyangjq.github.io"
 og_image = "/images/og.jpg"
 keywords = [
   "Jiaqi Yang",
@@ -47,7 +47,7 @@ emails = [
   "jiaqi.yang@surrey.ac.uk",
   "jiaqi-jacky.yang@connect.polyu.hk",
 ]
-github = "https://github.com/jackieyangjq"
+github = "https://github.com/jackyyangjq"
 linkedin = "https://www.linkedin.com/in/jiaqi-yang-7b8813326"
 
 [features]
@@ -59,8 +59,8 @@ enable_one_page_mode = false
 
 [analytics]
 # The site's own cookie-free visit counter (source in analytics/)
-endpoint = "https://jackieyangjq-visits.jackieyangjq.workers.dev"
-map_data = "https://jackieyangjq-visits.jackieyangjq.workers.dev/stats.json"
+endpoint = "https://jackyyangjq-visits.jackyyangjq.workers.dev"
+map_data = "https://jackyyangjq-visits.jackyyangjq.workers.dev/stats.json"
 
 [i18n]
 enabled = true

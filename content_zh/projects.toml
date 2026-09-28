@@ -14,7 +14,7 @@ image_alt = "模拟的分批实施政策事件研究：三种估计方法与真�
 tags = ["因果推断", "时间序列", "模拟检验"]
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[groups.items]]
 title = "用大模型做文本测量"
@@ -25,7 +25,7 @@ image_alt = "按评论方面列出大模型标签与重跑、换模型和廉价�
 tags = ["大模型", "文本数据", "信度检验"]
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/llm-text-measurement"
+href = "https://github.com/jackyyangjq/llm-text-measurement"
 
 [[groups.items]]
 title = "机器学习通胀预测"
@@ -36,7 +36,7 @@ image_alt = "美国未来 12 个月通胀：实际值与随机森林、AR 模型
 tags = ["预测", "机器学习", "复现"]
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/ml-inflation-forecasting"
+href = "https://github.com/jackyyangjq/ml-inflation-forecasting"
 
 [[groups]]
 title = "工具与应用"
@@ -49,7 +49,7 @@ content = "美国上市公司年报季报问答：每句话都有可核对的出
 tags = ["检索", "智能体", "评测"]
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/filings-qa-agent"
+href = "https://github.com/jackyyangjq/filings-qa-agent"
 
 [[groups.items]]
 title = "财经博主观点日报"
@@ -58,7 +58,7 @@ content = "每日个股观点摘要：Gemini 看 16 个 YouTube 财经频道和�
 tags = ["多模态大模型", "自动化"]
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/finfluencer-digest"
+href = "https://github.com/jackyyangjq/finfluencer-digest"
 
 [[groups.items]]
 title = "投资面板的观点记分牌"
@@ -69,7 +69,7 @@ image_alt = "观点记分牌页面，比较各来源的个股观点，使用虚�
 tags = ["FastAPI", "开源"]
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/catfolio"
+href = "https://github.com/jackyyangjq/catfolio"
 
 [[groups.items]]
 title = "热量记录"
@@ -78,10 +78,10 @@ content = "用视觉模型识别食物照片，用真实体重数据校准热量
 tags = ["视觉模型", "网页应用"]
 [[groups.items.links]]
 label = "在线使用"
-href = "https://jackieyangjq.github.io/caltrk/"
+href = "https://jackyyangjq.github.io/caltrk/"
 [[groups.items.links]]
 label = "代码"
-href = "https://github.com/jackieyangjq/caltrk"
+href = "https://github.com/jackyyangjq/caltrk"
 
 [[groups]]
 title = "开源贡献"
@@ -101,4 +101,4 @@ subtitle = "Python · 2026 年 9 月提交 4 个 PR"
 content = "港股代码补零与港币汇率、清理失效链接、券商账户同步、观点记分牌工作区。"
 [[groups.items.links]]
 label = "查看 PR"
-href = "https://github.com/irrwood/catfolio/pulls?q=author%3Ajackieyangjq"
+href = "https://github.com/irrwood/catfolio/pulls?q=author%3Ajackyyangjq"

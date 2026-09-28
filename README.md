@@ -1,6 +1,6 @@
-# jackieyangjq.github.io
+# jackyyangjq.github.io
 
-Source of my personal academic website: **https://jackieyangjq.github.io**
+Source of my personal academic website: **https://jackyyangjq.github.io**
 
 Built with [PRISM](https://github.com/xyjoey/PRISM) (MIT licence), a Next.js template for academic homepages, with my own additions:
 

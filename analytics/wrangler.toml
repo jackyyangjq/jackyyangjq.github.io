@@ -1,6 +1,6 @@
-# Cookie-free visit counter for jackieyangjq.github.io (Cloudflare Worker + D1).
+# Cookie-free visit counter for jackyyangjq.github.io (Cloudflare Worker + D1).
 # Deploy: npx wrangler@4 deploy   (from this folder)
-name = "jackieyangjq-visits"
+name = "jackyyangjq-visits"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 workers_dev = true

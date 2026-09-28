@@ -14,7 +14,7 @@ image_alt = "Event study on a simulated staggered rollout: three estimators plot
 tags = ["Causal inference", "Time series", "Simulation"]
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[groups.items]]
 title = "Measuring text with an LLM"
@@ -25,7 +25,7 @@ image_alt = "Agreement of LLM labels with a repeat run, a second model and cheap
 tags = ["LLM", "Text as data", "Reliability"]
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/llm-text-measurement"
+href = "https://github.com/jackyyangjq/llm-text-measurement"
 
 [[groups.items]]
 title = "Machine-learning inflation forecasts"
@@ -36,7 +36,7 @@ image_alt = "US inflation over the next 12 months: realised values against rando
 tags = ["Forecasting", "Machine learning", "Replication"]
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/ml-inflation-forecasting"
+href = "https://github.com/jackyyangjq/ml-inflation-forecasting"
 
 [[groups]]
 title = "Tools and apps"
@@ -49,7 +49,7 @@ content = "Question answering over SEC filings with a checkable source for every
 tags = ["Retrieval", "Agents", "Evaluation"]
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/filings-qa-agent"
+href = "https://github.com/jackyyangjq/filings-qa-agent"
 
 [[groups.items]]
 title = "Finfluencer digest"
@@ -58,7 +58,7 @@ content = "Daily digest of stock calls: Gemini watches 16 YouTube finance channe
 tags = ["Multimodal LLM", "Automation"]
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/finfluencer-digest"
+href = "https://github.com/jackyyangjq/finfluencer-digest"
 
 [[groups.items]]
 title = "Call tracker for a portfolio dashboard"
@@ -69,7 +69,7 @@ image_alt = "Call tracker screen comparing sources of stock calls, using fiction
 tags = ["FastAPI", "Open source"]
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/catfolio"
+href = "https://github.com/jackyyangjq/catfolio"
 
 [[groups.items]]
 title = "Calorie tracker"
@@ -78,10 +78,10 @@ content = "Recognises food from photos with a vision model and calibrates calori
 tags = ["Vision model", "Web app"]
 [[groups.items.links]]
 label = "Try it"
-href = "https://jackieyangjq.github.io/caltrk/"
+href = "https://jackyyangjq.github.io/caltrk/"
 [[groups.items.links]]
 label = "Code"
-href = "https://github.com/jackieyangjq/caltrk"
+href = "https://github.com/jackyyangjq/caltrk"
 
 [[groups]]
 title = "Open-source contributions"
@@ -101,4 +101,4 @@ subtitle = "Python · four pull requests, September 2026"
 content = "Hong Kong ticker padding and HKD exchange rates, dead-link fixes, broker account sync, and the call-tracker workspace."
 [[groups.items.links]]
 label = "Pull requests"
-href = "https://github.com/irrwood/catfolio/pulls?q=author%3Ajackieyangjq"
+href = "https://github.com/irrwood/catfolio/pulls?q=author%3Ajackyyangjq"

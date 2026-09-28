@@ -12,7 +12,7 @@ const VISIT_KEY = 'jy-visit';
 
 function trackingAllowed(): boolean {
     if (typeof window === 'undefined') return false;
-    if (window.location.hostname !== 'jackieyangjq.github.io') return false;
+    if (window.location.hostname !== 'jackyyangjq.github.io') return false;
     const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
     if (nav.doNotTrack === '1' || nav.globalPrivacyControl === true) return false;
     try {

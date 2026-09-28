@@ -1,4 +1,4 @@
-// Cookie-free visit counter for jackieyangjq.github.io.
+// Cookie-free visit counter for jackyyangjq.github.io.
 //
 //   POST /v            beacon from the site: { p: path, r: document.referrer, n: 1 if a new visit, t: 'view'|'download', l: 'en'|'zh' }
 //   GET  /stats.json   public aggregates for the visitor map (no individual visits)
@@ -11,8 +11,8 @@
 import { renderMapSvg } from './map.js';
 import { ADMIN_HTML } from './admin.js';
 
-const SITE_ORIGIN = 'https://jackieyangjq.github.io';
-const SITE_HOST = 'jackieyangjq.github.io';
+const SITE_ORIGIN = 'https://jackyyangjq.github.io';
+const SITE_HOST = 'jackyyangjq.github.io';
 const BOT_UA = /bot|crawl|spider|slurp|headless|preview|lighthouse|pingdom|monitor|facebookexternalhit|embedly|curl|wget|python|httpclient|go-http|java\//i;
 
 export default {

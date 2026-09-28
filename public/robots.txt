@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jackieyangjq.github.io/sitemap.xml
+Sitemap: https://jackyyangjq.github.io/sitemap.xml

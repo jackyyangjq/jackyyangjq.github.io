@@ -22,7 +22,7 @@ figure_caption = "Design sketch, not estimates."
 methods = ["Staggered difference-in-differences", "Event study", "Sun–Abraham estimator", "Spatial (Conley) standard errors", "Placebo and randomisation tests"]
 [[groups.items.links]]
 label = "Methods code, simulated data"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[groups.items]]
 title = "Destination sentiment climate and tourist demand: LLM-based aspect sentiment, avoidance signals, and time-series evidence"
@@ -37,7 +37,7 @@ figure_caption = "Design sketch, not estimates."
 methods = ["LLM aspect-based sentiment", "Reliability checks", "Unit-root tests", "VAR and Granger causality", "Impulse responses"]
 [[groups.items.links]]
 label = "Text-measurement code"
-href = "https://github.com/jackieyangjq/llm-text-measurement"
+href = "https://github.com/jackyyangjq/llm-text-measurement"
 
 [[groups.items]]
 title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
@@ -78,7 +78,7 @@ methods = [
 ]
 [method_areas.link]
 label = "Econometrics toolkit"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[method_areas]]
 title = "Text as data and LLMs"
@@ -90,7 +90,7 @@ methods = [
 ]
 [method_areas.link]
 label = "LLM text measurement"
-href = "https://github.com/jackieyangjq/llm-text-measurement"
+href = "https://github.com/jackyyangjq/llm-text-measurement"
 
 [[method_areas]]
 title = "Time series"
@@ -102,7 +102,7 @@ methods = [
 ]
 [method_areas.link]
 label = "Econometrics toolkit"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[method_areas]]
 title = "Multilevel and distributional models"
@@ -114,7 +114,7 @@ methods = [
 ]
 [method_areas.link]
 label = "Econometrics toolkit"
-href = "https://github.com/jackieyangjq/applied-stats-econometrics-toolkit"
+href = "https://github.com/jackyyangjq/applied-stats-econometrics-toolkit"
 
 [[method_areas]]
 title = "Machine-learning forecasting"
@@ -125,7 +125,7 @@ methods = [
 ]
 [method_areas.link]
 label = "Inflation forecasting"
-href = "https://github.com/jackieyangjq/ml-inflation-forecasting"
+href = "https://github.com/jackyyangjq/ml-inflation-forecasting"
 
 [[method_areas]]
 title = "Software"
@@ -136,4 +136,4 @@ methods = [
 ]
 [method_areas.link]
 label = "GitHub"
-href = "https://github.com/jackieyangjq"
+href = "https://github.com/jackyyangjq"
