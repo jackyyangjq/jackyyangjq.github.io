@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "node scripts/render-visitor-map.mjs && next build",
     "start": "next start",
     "lint": "next lint",
-    "world-map": "node scripts/build-world-map.mjs"
+    "world-map": "node scripts/build-world-map.mjs",
+    "visitor-map": "node scripts/render-visitor-map.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
