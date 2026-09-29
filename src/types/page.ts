@@ -1,5 +1,5 @@
 export interface BasePageConfig {
-    type: 'about' | 'publication' | 'card' | 'text' | 'research' | 'visitors';
+    type: 'about' | 'publication' | 'card' | 'text' | 'research' | 'visitors' | 'guide';
     title: string;
     description?: string;
 }
@@ -84,4 +84,75 @@ export interface ResearchPageConfig extends BasePageConfig {
 
 export interface VisitorsPageConfig extends BasePageConfig {
     type: 'visitors';
+}
+
+export interface GuideStep {
+    title: string;
+    label?: string;
+    body?: string;
+    icon?: string;
+}
+
+export interface GuideTile {
+    title: string;
+    body?: string;
+    icon?: string;
+}
+
+export interface GuideStage {
+    stage: string;
+    ai: string;
+    me: string;
+}
+
+export interface GuideLevel {
+    name: string;
+    research: string;
+    web: string;
+}
+
+export interface GuideFoldItem {
+    title: string;
+    fix: string;
+    body: string;
+}
+
+export interface GuideCard {
+    title: string;
+    body?: string;
+    points?: string[];
+}
+
+export interface GuideExample {
+    label: string;
+    href: string;
+    note?: string;
+}
+
+export interface GuideSection {
+    id: string;
+    title: string;
+    nav?: string;
+    lead?: string;
+    callout?: string;
+    note?: string;
+    tiles?: GuideTile[];
+    examples_title?: string;
+    examples?: GuideExample[];
+    timeline_labels?: string[];
+    timeline?: GuideStage[];
+    steps_style?: 'pills' | 'flow';
+    steps?: GuideStep[];
+    level_labels?: string[];
+    default_level?: number;
+    levels?: GuideLevel[];
+    fix_label?: string;
+    folds?: GuideFoldItem[];
+    cards?: GuideCard[];
+}
+
+export interface GuidePageConfig extends BasePageConfig {
+    type: 'guide';
+    links?: LinkItem[];
+    sections: GuideSection[];
 }

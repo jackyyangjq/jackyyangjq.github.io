@@ -6,6 +6,7 @@ Built with [PRISM](https://github.com/xyjoey/PRISM) (MIT licence), a Next.js tem
 
 - a research page for working papers, with design sketches instead of results while papers are under review
 - project cards with figures and links
+- a `guide` page type for structured pages (icon tiles, a timeline, a step flow, an effort switcher, fold-out lists, scroll animations), used by the AI Workflow page (`content/ai-workflow.toml`, English only)
 - CV downloads in the sidebar
 - a visitor map and statistics page, fed by cookie-free analytics
 - English and Chinese versions, light and dark themes

@@ -4,6 +4,7 @@ import PublicationsList from '@/components/publications/PublicationsList';
 import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
 import ResearchPage from '@/components/pages/ResearchPage';
+import GuidePage from '@/components/pages/GuidePage';
 import VisitorMap from '@/components/home/VisitorMap';
 import type { SiteConfig } from '@/lib/config';
 import { Publication } from '@/types/publication';
@@ -13,6 +14,7 @@ import {
   CardPageConfig,
   ResearchPageConfig,
   VisitorsPageConfig,
+  GuidePageConfig,
 } from '@/types/page';
 import { useLocaleStore } from '@/lib/stores/localeStore';
 
@@ -21,6 +23,7 @@ export type DynamicPageLocaleData =
   | { type: 'text'; config: TextPageConfig; content: string }
   | { type: 'card'; config: CardPageConfig }
   | { type: 'research'; config: ResearchPageConfig }
+  | { type: 'guide'; config: GuidePageConfig }
   | { type: 'visitors'; config: VisitorsPageConfig; analytics?: SiteConfig['analytics'] };
 
 interface DynamicPageClientProps {
@@ -50,6 +53,9 @@ export default function DynamicPageClient({ dataByLocale, defaultLocale }: Dynam
       )}
       {pageData.type === 'research' && (
         <ResearchPage config={pageData.config} />
+      )}
+      {pageData.type === 'guide' && (
+        <GuidePage config={pageData.config} />
       )}
       {pageData.type === 'visitors' && (
         <VisitorMap

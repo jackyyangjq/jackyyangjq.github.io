@@ -1,7 +1,7 @@
 [site]
 title = "杨嘉琦"
 description = "杨嘉琦（Jiaqi Yang），香港理工大学与萨里大学双博士候选人，研究因果推断、时间序列和大语言模型在旅游、酒店与政策研究中的应用。"
-last_updated = "2026 年 9 月 28 日"
+last_updated = "2026 年 9 月 29 日"
 
 [author]
 name = "杨嘉琦"
@@ -40,6 +40,13 @@ title = "项目"
 type = "page"
 target = "projects"
 href = "/projects"
+
+# 页面内容只有英文版，中文界面也显示英文（content_zh 里没有 ai-workflow.toml）
+[[navigation]]
+title = "AI 工作流"
+type = "page"
+target = "ai-workflow"
+href = "/ai-workflow"
 
 [[navigation]]
 title = "教学"

@@ -1,5 +1,9 @@
 [[news]]
 date = "2026-09"
+content = "Added a page on how I use AI in research and software, including the mistakes it makes without any error message (see AI Workflow)."
+
+[[news]]
+date = "2026-09"
 content = "Released open code for the methods I use in research: an econometrics toolkit and a validated LLM text-measurement pipeline (see Projects)."
 
 [[news]]

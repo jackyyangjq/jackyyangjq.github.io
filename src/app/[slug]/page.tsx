@@ -10,6 +10,7 @@ import {
   CardPageConfig,
   ResearchPageConfig,
   VisitorsPageConfig,
+  GuidePageConfig,
 } from '@/types/page';
 
 import { Metadata } from 'next';
@@ -53,6 +54,13 @@ function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleDa
     return {
       type: 'research',
       config: pageConfig as ResearchPageConfig,
+    };
+  }
+
+  if (pageConfig.type === 'guide') {
+    return {
+      type: 'guide',
+      config: pageConfig as GuidePageConfig,
     };
   }
 

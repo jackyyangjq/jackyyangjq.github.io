@@ -5,7 +5,7 @@ extra_pages = ["visitors"]
 title = "Jiaqi (Jacky) Yang"
 description = "Jiaqi (Jacky) Yang is a dual PhD candidate at The Hong Kong Polytechnic University and the University of Surrey, working on causal inference, time series and large language models for tourism, hospitality and policy research."
 favicon = "/favicon.svg"
-last_updated = "28 September 2026"
+last_updated = "29 September 2026"
 url = "https://jackyyangjq.github.io"
 og_image = "/images/og.jpg"
 keywords = [
@@ -93,6 +93,12 @@ title = "Projects"
 type = "page"
 target = "projects"
 href = "/projects"
+
+[[navigation]]
+title = "AI Workflow"
+type = "page"
+target = "ai-workflow"
+href = "/ai-workflow"
 
 [[navigation]]
 title = "Teaching"
