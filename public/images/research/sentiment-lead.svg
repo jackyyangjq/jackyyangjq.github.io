@@ -1,44 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 270" role="img" aria-labelledby="t d">
-  <title id="t">Design sketch: which series moves first</title>
-  <desc id="d">Three stylised daily series stacked vertically: online sentiment dips first, talk of avoiding the destination rises next, and visitor arrivals dip last. Arrows show the order. No real data.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="t d">
+  <title id="t">Design sketch: which daily series moves first</title>
+  <desc id="d">Top: social-media posts are labelled by a large language model and turned into daily series. Below: three illustrative daily series on one time axis. Online sentiment dips first, talk of avoiding the destination rises next, and visitor arrivals dip last; arrows show the order. Not real data.</desc>
   <style>
-    .h{font:600 13px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
-    .m{font:400 11.5px Inter,Helvetica,Arial,sans-serif;fill:#78716c}
-    .s{fill:none;stroke:#57534e;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
-    .e{fill:none;stroke:#8b1e2d;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
-    .g{stroke:#d6d3d1;stroke-width:1;stroke-dasharray:3 3}
-    .a{fill:none;stroke:#8b1e2d;stroke-width:1.4}
+    text{font-family:Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+    .hd{font-size:9.5px;font-weight:600;letter-spacing:.09em;fill:#6b6560}
+    .lb{font-size:11.5px;font-weight:500;fill:#211b1c}
+    .sm{font-size:10.5px;fill:#57534e}
+    .mu{font-size:10.5px;fill:#6b6560}
+    .cs{font-size:10px;font-weight:500;fill:#57534e}
+    .ft{font-size:9.5px;font-style:italic;fill:#6b6560}
   </style>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#8b1e2d"/>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#a39d97" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
+    <clipPath id="ev0"><rect x="118" y="68" width="64" height="44"/></clipPath>
+    <clipPath id="ev1"><rect x="166" y="114" width="64" height="44"/></clipPath>
+    <clipPath id="ev2"><rect x="214" y="160" width="64" height="44"/></clipPath>
   </defs>
-  <rect width="360" height="270" fill="#ffffff"/>
-
-  <line class="g" x1="100" y1="36" x2="100" y2="92"/>
-  <line class="g" x1="160" y1="112" x2="160" y2="174"/>
-  <line class="g" x1="222" y1="196" x2="222" y2="254"/>
-
-  <text class="h" x="344" y="30" text-anchor="end">online sentiment</text>
-  <polyline class="s" points="16,58 30,56 44,59 58,57 72,58 82,58"/>
-  <polyline class="e" points="82,58 92,66 100,80 110,70 120,60"/>
-  <polyline class="s" points="120,60 136,57 152,59 170,57 190,58 214,57 240,59 266,57 292,58 318,57 344,58"/>
-
-  <text class="h" x="344" y="114" text-anchor="end">talk of avoiding it</text>
-  <polyline class="s" points="16,150 40,151 64,149 88,150 112,151 136,150 144,150"/>
-  <polyline class="e" points="144,150 152,140 160,124 170,136 180,148"/>
-  <polyline class="s" points="180,148 200,150 224,149 248,151 272,150 296,149 320,151 344,150"/>
-
-  <text class="h" x="344" y="198" text-anchor="end">visitor arrivals</text>
-  <polyline class="s" points="16,222 40,221 64,223 88,221 112,222 136,223 160,221 184,222 204,222"/>
-  <polyline class="e" points="204,222 214,232 222,246 234,238 246,228"/>
-  <polyline class="s" points="246,228 262,224 280,222 300,223 322,221 344,222"/>
-
-  <path class="a" d="M106,84 C126,100 138,110 152,124" marker-end="url(#arrow)"/>
-  <path class="a" d="M166,154 C184,180 198,212 214,236" marker-end="url(#arrow)"/>
-
-  <line x1="16" y1="262" x2="344" y2="262" stroke="#e7e4e0" stroke-width="1"/>
-  <text class="m" x="16" y="258">earlier</text>
-  <text class="m" x="344" y="258" text-anchor="end">later</text>
+  <rect width="320" height="240" fill="#ffffff"/>
+  <rect x="14" y="12" width="89.2" height="24" rx="12" fill="#faf8f6" stroke="#e7e2dd"/>
+  <path d="M20,19 h12 a2,2 0 0 1 2,2 v5 a2,2 0 0 1 -2,2 h-7 l-3,3 v-3 h-2 a2,2 0 0 1 -2,-2 v-5 a2,2 0 0 1 2,-2 z" fill="none" stroke="#8b1e2d" stroke-width="1.4" stroke-linejoin="round"/>
+  <text class="cs" x="38" y="27.5">Social posts</text>
+  <rect x="119.6" y="12" width="83.2" height="24" rx="12" fill="#faf8f6" stroke="#e7e2dd"/>
+  <path d="M131.6,17 C132.6,22 133.6,23 138.6,24 C133.6,25 132.6,26 131.6,31 C130.6,26 129.6,25 124.6,24 C129.6,23 130.6,22 131.6,17 z" fill="#8b1e2d"/>
+  <text class="cs" x="143.6" y="27.5">LLM labels</text>
+  <rect x="219.2" y="12" width="86.8" height="24" rx="12" fill="#faf8f6" stroke="#e7e2dd"/>
+  <path d="M224.2,28 L228.2,24 L232.2,26 L238.2,19" fill="none" stroke="#8b1e2d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="cs" x="243.2" y="27.5">Daily series</text>
+  <path d="M107.2,24 H114.6" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <path d="M206.8,24 H214.2" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <text class="hd" x="14" y="62">WHICH MOVES FIRST</text>
+  <text class="lb" x="14" y="94">Sentiment</text>
+  <line x1="104" y1="90" x2="306" y2="90" stroke="#e7e2dd" stroke-width="1.2"/>
+  <path d="M104,90.8 C106.7,90.7 114.7,89.2 120,90 C125.3,90.8 131,93.7 136,95.8 C141,98 145.7,102.8 150,103 C154.3,103.2 157.7,98.9 162,97.2 C166.3,95.4 170.7,93.4 176,92.3 C181.3,91.3 187.3,91 194,90.8 C200.7,90.5 209.7,91 216,90.8 C222.3,90.6 226.7,89.5 232,89.4 C237.3,89.4 242.7,90.5 248,90.5 C253.3,90.5 258.7,89.6 264,89.6 C269.3,89.6 274.7,90.6 280,90.6 C285.3,90.6 291.7,89.5 296,89.5 C300.3,89.5 304.3,90.2 306,90.4" fill="none" stroke="#a39d97" stroke-width="2" stroke-linecap="round"/>
+  <path d="M104,90.8 C106.7,90.7 114.7,89.2 120,90 C125.3,90.8 131,93.7 136,95.8 C141,98 145.7,102.8 150,103 C154.3,103.2 157.7,98.9 162,97.2 C166.3,95.4 170.7,93.4 176,92.3 C181.3,91.3 187.3,91 194,90.8 C200.7,90.5 209.7,91 216,90.8 C222.3,90.6 226.7,89.5 232,89.4 C237.3,89.4 242.7,90.5 248,90.5 C253.3,90.5 258.7,89.6 264,89.6 C269.3,89.6 274.7,90.6 280,90.6 C285.3,90.6 291.7,89.5 296,89.5 C300.3,89.5 304.3,90.2 306,90.4" fill="none" stroke="#8b1e2d" stroke-width="2" stroke-linecap="round" clip-path="url(#ev0)"/>
+  <text class="lb" x="14" y="140">Avoidance talk</text>
+  <line x1="104" y1="136" x2="306" y2="136" stroke="#e7e2dd" stroke-width="1.2"/>
+  <path d="M104,136.8 C106.7,136.6 114.7,135.5 120,135.4 C125.3,135.3 130.7,136.5 136,136.5 C141.3,136.5 146.7,135.7 152,135.6 C157.3,135.5 162.7,136.9 168,136 C173.3,135.1 179,132.3 184,130.2 C189,128 193.7,123.2 198,123 C202.3,122.8 205.7,127.1 210,128.8 C214.3,130.6 218.7,132.6 224,133.7 C229.3,134.7 235.3,134.9 242,135.2 C248.7,135.5 257.7,135.4 264,135.6 C270.3,135.8 274.7,136.6 280,136.6 C285.3,136.6 291.7,135.5 296,135.5 C300.3,135.5 304.3,136.2 306,136.4" fill="none" stroke="#a39d97" stroke-width="2" stroke-linecap="round"/>
+  <path d="M104,136.8 C106.7,136.6 114.7,135.5 120,135.4 C125.3,135.3 130.7,136.5 136,136.5 C141.3,136.5 146.7,135.7 152,135.6 C157.3,135.5 162.7,136.9 168,136 C173.3,135.1 179,132.3 184,130.2 C189,128 193.7,123.2 198,123 C202.3,122.8 205.7,127.1 210,128.8 C214.3,130.6 218.7,132.6 224,133.7 C229.3,134.7 235.3,134.9 242,135.2 C248.7,135.5 257.7,135.4 264,135.6 C270.3,135.8 274.7,136.6 280,136.6 C285.3,136.6 291.7,135.5 296,135.5 C300.3,135.5 304.3,136.2 306,136.4" fill="none" stroke="#8b1e2d" stroke-width="2" stroke-linecap="round" clip-path="url(#ev1)"/>
+  <text class="lb" x="14" y="186">Arrivals</text>
+  <line x1="104" y1="182" x2="306" y2="182" stroke="#e7e2dd" stroke-width="1.2"/>
+  <path d="M104,182.8 C106.7,182.6 114.7,181.5 120,181.4 C125.3,181.3 130.7,182.5 136,182.5 C141.3,182.5 146.7,181.6 152,181.6 C157.3,181.6 162.7,182.6 168,182.6 C173.3,182.6 178.7,181.5 184,181.5 C189.3,181.5 194.7,182.3 200,182.4 C205.3,182.5 210.7,181.1 216,182 C221.3,182.9 227,185.7 232,187.8 C237,190 241.7,194.8 246,195 C250.3,195.2 253.7,190.9 258,189.2 C262.3,187.4 266.7,185.4 272,184.3 C277.3,183.3 284.3,183.1 290,182.8 C295.7,182.5 303.3,182.5 306,182.4" fill="none" stroke="#a39d97" stroke-width="2" stroke-linecap="round"/>
+  <path d="M104,182.8 C106.7,182.6 114.7,181.5 120,181.4 C125.3,181.3 130.7,182.5 136,182.5 C141.3,182.5 146.7,181.6 152,181.6 C157.3,181.6 162.7,182.6 168,182.6 C173.3,182.6 178.7,181.5 184,181.5 C189.3,181.5 194.7,182.3 200,182.4 C205.3,182.5 210.7,181.1 216,182 C221.3,182.9 227,185.7 232,187.8 C237,190 241.7,194.8 246,195 C250.3,195.2 253.7,190.9 258,189.2 C262.3,187.4 266.7,185.4 272,184.3 C277.3,183.3 284.3,183.1 290,182.8 C295.7,182.5 303.3,182.5 306,182.4" fill="none" stroke="#8b1e2d" stroke-width="2" stroke-linecap="round" clip-path="url(#ev2)"/>
+  <path d="M156,106 C168,112 178,122 191,122" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <path d="M203,128 C210,150 224,161 237,175" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <circle cx="150" cy="103" r="4" fill="#8b1e2d" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="198" cy="123" r="4" fill="#8b1e2d" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="246" cy="195" r="4" fill="#8b1e2d" stroke="#ffffff" stroke-width="2"/>
+  <line x1="104" y1="207" x2="306" y2="207" stroke="#e7e2dd" stroke-width="1"/>
+  <text class="mu" x="104" y="219">earlier</text>
+  <text class="mu" x="306" y="219" text-anchor="end">days later</text>
+  <text class="ft" x="14" y="232">Design sketch, not results</text>
 </svg>

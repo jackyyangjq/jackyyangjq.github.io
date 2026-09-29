@@ -17,7 +17,7 @@ authorship = "Wang, J., Hao, F., **Yang, J.**†, & Song, H."
 summary = "东亚某国分地区推行的签证便利化政策，用房屋交易层面的数据研究。"
 finding = "政策覆盖地区的房价上涨；效应在几年后才显现，部分通过游客流量的影响起作用。"
 figure = "/images/research/staggered-policy.svg"
-figure_alt = "研究设计示意：各地区分批实施政策，估计效应在滞后一段时间后才上升。并非真实估计结果。"
+figure_alt = "研究设计示意：六边形地图按政策覆盖的批次给地区着色；右侧示意的事件研究中，效应起初持平，滞后几年才上升。并非真实估计结果。"
 figure_caption = "研究设计示意，非估计结果。"
 methods = ["分批实施的双重差分", "事件研究", "Sun–Abraham 估计量", "空间相关（Conley）标准误", "安慰剂与随机化检验"]
 [[groups.items.links]]
@@ -32,7 +32,7 @@ authorship = "Hao, F., Wang, K., **Yang, J.**, & Qiu, X."
 summary = "用社交媒体帖子构建亚洲某城市目的地的每日指标，与官方游客到访数据相连接。"
 finding = "网络情绪的变化先于“表示会避开该地”的言论变化，而后者又先于到访人数的变化。"
 figure = "/images/research/sentiment-lead.svg"
-figure_alt = "研究设计示意：三条每日序列中，情绪最先变化，回避言论其次，到访人数最后。并非真实数据。"
+figure_alt = "研究设计示意：社交媒体帖子经大语言模型标注，汇总成每日序列；三条示意序列中，情绪最先下降，回避言论随后上升，到访人数最后下降。并非真实数据。"
 figure_caption = "研究设计示意，非估计结果。"
 methods = ["大模型方面级情感分析", "信度检验", "单位根检验", "VAR 与格兰杰因果", "脉冲响应"]
 [[groups.items.links]]
@@ -46,7 +46,7 @@ venue = "Journal of Cleaner Production"
 authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
 summary = "中国分批在各地区推出的碳排放权交易试点，用上市公司面板数据和一个部分基于年报文本构建的绿色转型新指数研究。"
 figure = "/images/research/green-index-design.svg"
-figure_alt = "研究设计示意：年报文本用于构建企业层面的绿色指数，分批启动的试点用分批实施的双重差分比较。"
+figure_alt = "研究设计示意：年报文本经词向量扩充的词典打分，与其他指标合成企业年度绿色指数；试点分三批启动，另有企业始终未覆盖，用分批实施的双重差分比较。不展示结果。"
 figure_caption = "研究设计示意。"
 methods = ["分批实施的 DID（Callaway–Sant'Anna）", "Goodman-Bacon 分解", "词向量扩展词典", "CRITIC 与熵权赋权", "自助法中介检验"]
 

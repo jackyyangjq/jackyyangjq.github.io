@@ -17,7 +17,7 @@ authorship = "Wang, J., Hao, F., **Yang, J.**†, & Song, H."
 summary = "A visa liberalisation policy rolled out region by region in an East Asian country, studied with transaction-level housing data."
 finding = "Housing prices rose where the policy applied; the effect appeared only after a few years and worked partly through exposure to tourist flows."
 figure = "/images/research/staggered-policy.svg"
-figure_alt = "Design sketch: regions adopt the policy in waves, and the estimated effect rises only after a lag. Not real estimates."
+figure_alt = "Design sketch: a hexagon map of regions shaded by the wave in which the policy reached them, and an illustrative event study that stays flat at first and rises only after a lag. Not real estimates."
 figure_caption = "Design sketch, not estimates."
 methods = ["Staggered difference-in-differences", "Event study", "Sun–Abraham estimator", "Spatial (Conley) standard errors", "Placebo and randomisation tests"]
 [[groups.items.links]]
@@ -32,7 +32,7 @@ authorship = "Hao, F., Wang, K., **Yang, J.**, & Qiu, X."
 summary = "Daily indicators built from social-media posts about a destination in an Asian city, linked to official visitor arrivals."
 finding = "Shifts in online sentiment came before changes in how often people said they would avoid the destination, and those came before changes in arrivals."
 figure = "/images/research/sentiment-lead.svg"
-figure_alt = "Design sketch: three daily series in which sentiment moves first, avoidance talk next and arrivals last. Not real data."
+figure_alt = "Design sketch: social-media posts labelled by an LLM become daily series; in three illustrative series, sentiment dips first, avoidance talk rises next and arrivals dip last. Not real data."
 figure_caption = "Design sketch, not estimates."
 methods = ["LLM aspect-based sentiment", "Reliability checks", "Unit-root tests", "VAR and Granger causality", "Impulse responses"]
 [[groups.items.links]]
@@ -46,7 +46,7 @@ venue = "Journal of Cleaner Production"
 authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
 summary = "China's emissions-trading pilots, introduced in waves across regions, studied with a panel of listed firms and a new index of green transformation built partly from the text of annual reports."
 figure = "/images/research/green-index-design.svg"
-figure_alt = "Design sketch: annual-report text feeds a firm-level green index, and pilots that start in waves are compared with a staggered difference-in-differences design."
+figure_alt = "Design sketch: annual-report text, scored with a dictionary expanded by word embeddings, feeds a firm-by-year green index; pilots that start in three waves, with some firms never covered, are compared with a staggered difference-in-differences design. No results shown."
 figure_caption = "Design sketch."
 methods = ["Staggered DiD (Callaway–Sant'Anna)", "Goodman-Bacon decomposition", "Dictionary expanded with word embeddings", "CRITIC and entropy weighting", "Bootstrapped mediation"]
 

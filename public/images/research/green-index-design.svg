@@ -1,58 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 270" role="img" aria-labelledby="t d">
-  <title id="t">Design sketch: a text-based index and a staggered policy</title>
-  <desc id="d">Top: annual reports are read with a dictionary expanded by word embeddings and combined with other indicators into a firm-level index. Bottom: pilot programmes start in waves, with a group of firms never covered, compared with a staggered difference-in-differences estimator. No results shown.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="t d">
+  <title id="t">Design sketch: a text-based green index and a staggered pilot policy</title>
+  <desc id="d">Top: annual reports are scored with a green dictionary (seed words plus words added by word embeddings) and combined with other indicators into a firm-by-year green index. Bottom: timelines show pilot programmes starting in three waves while some firms are never covered; the waves are compared with a staggered difference-in-differences design. No results shown.</desc>
   <style>
-    .h{font:600 13px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
-    .b{font:500 12px Inter,Helvetica,Arial,sans-serif;fill:#211b1c}
-    .m{font:400 11.5px Inter,Helvetica,Arial,sans-serif;fill:#78716c}
-    .box{fill:#faf9f7;stroke:#d6d3d1;stroke-width:1}
-    .key{fill:#f7e9eb;stroke:#8b1e2d;stroke-width:1.2}
-    .doc{fill:#ffffff;stroke:#a8a29e;stroke-width:1}
-    .ln{stroke:#d6d3d1;stroke-width:1.4;stroke-linecap:round}
-    .ar{fill:none;stroke:#78716c;stroke-width:1.3}
+    text{font-family:Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+    .hd{font-size:9.5px;font-weight:600;letter-spacing:.09em;fill:#6b6560}
+    .lb{font-size:11.5px;font-weight:500;fill:#211b1c}
+    .sm{font-size:10.5px;fill:#57534e}
+    .mu{font-size:10.5px;fill:#6b6560}
+    .cs{font-size:10px;font-weight:500;fill:#57534e}
+    .ft{font-size:9.5px;font-style:italic;fill:#6b6560}
   </style>
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#78716c"/>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#a39d97" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
   </defs>
-  <rect width="360" height="270" fill="#ffffff"/>
-
-  <text class="h" x="16" y="22">Measure</text>
-  <g>
-    <rect class="doc" x="22" y="40" width="34" height="44" rx="2"/>
-    <rect class="doc" x="28" y="34" width="34" height="44" rx="2"/>
-    <rect class="doc" x="34" y="28" width="34" height="44" rx="2"/>
-    <line class="ln" x1="40" y1="38" x2="62" y2="38"/><line class="ln" x1="40" y1="45" x2="62" y2="45"/>
-    <line class="ln" x1="40" y1="52" x2="58" y2="52"/><line class="ln" x1="40" y1="59" x2="62" y2="59"/>
-    <text class="m" x="45" y="102" text-anchor="middle">annual reports</text>
-  </g>
-  <path class="ar" d="M76,58 L104,58" marker-end="url(#arr)"/>
-  <rect class="box" x="108" y="34" width="104" height="48" rx="6"/>
-  <text class="b" x="160" y="54" text-anchor="middle">dictionary +</text>
-  <text class="b" x="160" y="70" text-anchor="middle">word embeddings</text>
-  <path class="ar" d="M216,58 L244,58" marker-end="url(#arr)"/>
-  <rect class="key" x="248" y="34" width="98" height="48" rx="6"/>
-  <text class="b" x="297" y="54" text-anchor="middle">firm-level</text>
-  <text class="b" x="297" y="70" text-anchor="middle">green index</text>
-  <text class="m" x="297" y="100" text-anchor="middle">+ other indicators</text>
-
-  <text class="h" x="16" y="136">Compare</text>
-  <text class="m" x="16" y="160">wave 1</text>
-  <text class="m" x="16" y="180">wave 2</text>
-  <text class="m" x="16" y="200">wave 3</text>
-  <text class="m" x="16" y="220">never</text>
-  <line x1="68" y1="156" x2="226" y2="156" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
-  <line x1="68" y1="176" x2="226" y2="176" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
-  <line x1="68" y1="196" x2="226" y2="196" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
-  <line x1="68" y1="216" x2="226" y2="216" stroke="#ebe7e3" stroke-width="8" stroke-linecap="round"/>
-  <line x1="104" y1="156" x2="226" y2="156" stroke="#8b1e2d" stroke-width="8" stroke-linecap="round"/>
-  <line x1="136" y1="176" x2="226" y2="176" stroke="#8b1e2d" stroke-width="8" stroke-linecap="round"/>
-  <line x1="180" y1="196" x2="226" y2="196" stroke="#8b1e2d" stroke-width="8" stroke-linecap="round"/>
-  <text class="m" x="226" y="240" text-anchor="end">pilot in force →</text>
-  <path class="ar" d="M238,186 L262,186" marker-end="url(#arr)"/>
-  <rect class="key" x="266" y="162" width="80" height="48" rx="6"/>
-  <text class="b" x="306" y="182" text-anchor="middle">staggered</text>
-  <text class="b" x="306" y="198" text-anchor="middle">DiD</text>
-  <path class="ar" d="M322,108 C330,130 322,146 314,158" marker-end="url(#arr)"/>
+  <rect width="320" height="240" fill="#ffffff"/>
+  <text class="hd" x="14" y="21">MEASURE</text>
+  <rect x="28" y="40" width="30" height="38" rx="3" fill="#ffffff" stroke="#a39d97" stroke-width="1.2"/>
+  <rect x="24" y="36" width="30" height="38" rx="3" fill="#ffffff" stroke="#a39d97" stroke-width="1.2"/>
+  <rect x="20" y="32" width="30" height="38" rx="3" fill="#ffffff" stroke="#a39d97" stroke-width="1.2"/>
+  <line x1="25" y1="40" x2="43" y2="40" stroke="#efebe7" stroke-width="2" stroke-linecap="round"/>
+  <line x1="25" y1="46" x2="45" y2="46" stroke="#efebe7" stroke-width="2" stroke-linecap="round"/>
+  <line x1="25" y1="52" x2="39" y2="52" stroke="#8b1e2d" stroke-width="2" stroke-linecap="round"/>
+  <line x1="25" y1="58" x2="44" y2="58" stroke="#efebe7" stroke-width="2" stroke-linecap="round"/>
+  <line x1="25" y1="64" x2="36" y2="64" stroke="#efebe7" stroke-width="2" stroke-linecap="round"/>
+  <text class="mu" x="41" y="94" text-anchor="middle">annual reports</text>
+  <path d="M66,55 H79" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <rect x="84" y="32" width="112" height="46" rx="8" fill="#faf8f6" stroke="#e7e2dd"/>
+  <text class="sm" x="140" y="49" text-anchor="middle">green dictionary</text>
+  <rect x="94" y="58" width="22" height="9" rx="4.5" fill="#8b1e2d"/>
+  <rect x="121" y="58" width="18" height="9" rx="4.5" fill="#8b1e2d"/>
+  <rect x="144" y="58.6" width="24" height="7.8" rx="3.9" fill="none" stroke="#8b1e2d" stroke-width="1.2"/>
+  <rect x="173" y="58.6" width="18" height="7.8" rx="3.9" fill="none" stroke="#8b1e2d" stroke-width="1.2"/>
+  <text class="mu" x="140" y="94" text-anchor="middle">+ word embeddings</text>
+  <path d="M200,55 H216" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <rect x="222" y="32" width="84" height="46" rx="8" fill="#8b1e2d" fill-opacity="0.08" stroke="#8b1e2d" stroke-opacity="0.45"/>
+  <text class="lb" x="264" y="51" text-anchor="middle">Green index</text>
+  <text class="mu" x="264" y="66" text-anchor="middle">firm by year</text>
+  <text class="mu" x="264" y="94" text-anchor="middle">+ other indicators</text>
+  <path d="M264,100 V128" fill="none" stroke="#a39d97" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ah)"/>
+  <text class="mu" x="270" y="117">outcome</text>
+  <text class="hd" x="14" y="124">COMPARE</text>
+  <text class="sm" x="14" y="143.5">1st wave</text>
+  <rect x="80" y="137" width="226" height="6" rx="3" fill="#efebe7"/>
+  <rect x="116" y="137" width="190" height="6" rx="3" fill="#8b1e2d"/>
+  <circle cx="119" cy="140" r="4" fill="#8b1e2d" stroke="#ffffff" stroke-width="2"/>
+  <text class="sm" x="14" y="160.5">2nd wave</text>
+  <rect x="80" y="154" width="226" height="6" rx="3" fill="#efebe7"/>
+  <rect x="162" y="154" width="144" height="6" rx="3" fill="#b54a5c"/>
+  <circle cx="165" cy="157" r="4" fill="#b54a5c" stroke="#ffffff" stroke-width="2"/>
+  <text class="sm" x="14" y="177.5">3rd wave</text>
+  <rect x="80" y="171" width="226" height="6" rx="3" fill="#efebe7"/>
+  <rect x="214" y="171" width="92" height="6" rx="3" fill="#d98896"/>
+  <circle cx="217" cy="174" r="4" fill="#d98896" stroke="#ffffff" stroke-width="2"/>
+  <text class="sm" x="14" y="194.5">never</text>
+  <rect x="80" y="188" width="226" height="6" rx="3" fill="#efebe7"/>
+  <line x1="80" y1="204" x2="306" y2="204" stroke="#e7e2dd" stroke-width="1"/>
+  <text class="mu" x="80" y="216">staggered DiD comparison</text>
+  <text class="mu" x="306" y="216" text-anchor="end">years →</text>
+  <text class="ft" x="14" y="232">Design sketch, not results</text>
 </svg>
