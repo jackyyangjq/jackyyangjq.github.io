@@ -35,10 +35,19 @@ export const ADMIN_HTML = `<!doctype html>
   .mapbox circle[data-code]:hover { stroke:#211b1c; }
   .tip { position:absolute; pointer-events:none; background:#211b1c; color:#fcfbf9; font-size:12px; line-height:1.4; padding:6px 9px; border-radius:6px; white-space:nowrap; transform:translate(-50%, calc(-100% - 10px)); display:none; z-index:2; }
   .tip b { display:block; font-size:13px; }
-  .bars { display:flex; align-items:flex-end; gap:3px; height:120px; border-bottom:1px solid var(--line); }
-  .bars div { flex:1; background:var(--accent); border-radius:3px 3px 0 0; min-height:1px; }
-  .bars div.zero { background:var(--line); }
-  .axis { display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin-top:4px; }
+  .plot { display:grid; grid-template-columns:auto 1fr; column-gap:8px; font-size:11px; color:var(--muted); }
+  .yaxis { position:relative; height:140px; min-width:16px; }
+  .yaxis span { position:absolute; right:0; transform:translateY(-50%); }
+  .ytitle { grid-column:1 / 3; margin-bottom:8px; }
+  .bars { position:relative; display:flex; align-items:flex-end; gap:3px; height:140px; border-bottom:1px solid var(--muted); border-left:1px solid var(--muted); padding:0 2px; }
+  .bars .grid { position:absolute; left:0; right:0; border-top:1px dashed var(--line); }
+  .bars .bar { position:relative; flex:1; background:var(--accent); border-radius:3px 3px 0 0; }
+  .bars .bar.zero { background:transparent; }
+  .bars .bar:hover { opacity:.75; }
+  .xaxis { grid-column:2; display:flex; gap:3px; padding:4px 2px 0; }
+  .xaxis span { flex:1; position:relative; height:16px; }
+  .xaxis span b { position:absolute; left:50%; transform:translateX(-50%); font-weight:400; white-space:nowrap; }
+  .xtitle { grid-column:2; text-align:center; margin-top:2px; }
   .lists { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; }
   .lists .card { margin:0; }
   ol { list-style:none; margin:0; padding:0; }
@@ -118,17 +127,31 @@ function overview(stats) {
   if (daily.length) {
     const chart = el('div', 'card');
     chart.append(el('h3', null, '最近 30 天每日访问'));
-    const bars = el('div', 'bars');
+    // Y axis runs from 0 to a round number at or above the busiest day, in 4 or 5 equal steps
     const max = Math.max(1, ...daily.map((d) => d.visitors));
-    for (const d of daily) {
-      const b = el('div', d.visitors ? null : 'zero');
-      b.style.height = (d.visitors / max) * 100 + '%';
+    const step = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000].find((n) => n * 5 >= max) || Math.ceil(max / 5);
+    const top = Math.ceil(max / step) * step;
+    const plot = el('div', 'plot');
+    plot.append(el('div', 'ytitle', '访问次数'));
+    const yaxis = el('div', 'yaxis');
+    const bars = el('div', 'bars');
+    for (let v = 0; v <= top; v += step) {
+      const label = el('span', null, num.format(v)); label.style.top = (1 - v / top) * 100 + '%'; yaxis.append(label);
+      if (v > 0) { const g = el('div', 'grid'); g.style.top = (1 - v / top) * 100 + '%'; bars.append(g); }
+    }
+    const xaxis = el('div', 'xaxis');
+    daily.forEach((d, i) => {
+      const b = el('div', d.visitors ? 'bar' : 'bar zero');
+      b.style.height = (d.visitors / top) * 100 + '%';
       b.title = day(d.date) + '：' + d.visitors + ' 次访问';
       bars.append(b);
-    }
-    const axis = el('div', 'axis');
-    axis.append(el('span', null, shortDay(daily[0].date)), el('span', null, '最多 ' + max + ' 次/天'), el('span', null, shortDay(daily[daily.length - 1].date)));
-    chart.append(bars, axis);
+      // Label every 7th day, counted back from today so the latest day always has a date
+      const slot = el('span');
+      if ((daily.length - 1 - i) % 7 === 0) slot.append(el('b', null, shortDay(d.date)));
+      xaxis.append(slot);
+    });
+    plot.append(yaxis, bars, xaxis, el('div', 'xtitle', '日期（英国时间）'));
+    chart.append(plot);
     frag.append(chart);
   }
 
