@@ -1,5 +1,5 @@
 export interface BasePageConfig {
-    type: 'about' | 'publication' | 'card' | 'text' | 'research' | 'visitors' | 'guide';
+    type: 'about' | 'publication' | 'card' | 'text' | 'research' | 'guide';
     title: string;
     description?: string;
 }
@@ -80,10 +80,6 @@ export interface ResearchPageConfig extends BasePageConfig {
     methods_title?: string;
     methods_description?: string;
     method_areas?: MethodArea[];
-}
-
-export interface VisitorsPageConfig extends BasePageConfig {
-    type: 'visitors';
 }
 
 export interface GuideStep {

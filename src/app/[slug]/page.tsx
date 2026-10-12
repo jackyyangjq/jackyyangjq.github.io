@@ -9,7 +9,6 @@ import {
   TextPageConfig,
   CardPageConfig,
   ResearchPageConfig,
-  VisitorsPageConfig,
   GuidePageConfig,
 } from '@/types/page';
 
@@ -64,14 +63,6 @@ function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleDa
     };
   }
 
-  if (pageConfig.type === 'visitors') {
-    return {
-      type: 'visitors',
-      config: pageConfig as VisitorsPageConfig,
-      analytics: getConfig(locale).analytics,
-    };
-  }
-
   return null;
 }
 
@@ -80,7 +71,7 @@ export function generateStaticParams() {
   const fromNavigation = config.navigation
     .filter((nav) => nav.type === 'page' && nav.target !== 'about')
     .map((nav) => nav.target);
-  // Pages reachable by link but not listed in the top navigation (e.g. the visitor statistics page)
+  // Pages reachable by link but not listed in the top navigation (listed in extra_pages in config.toml)
   const extra = config.extra_pages || [];
   return [...new Set([...fromNavigation, ...extra])].map((slug) => ({ slug }));
 }

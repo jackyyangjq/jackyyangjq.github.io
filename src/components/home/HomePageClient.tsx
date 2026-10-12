@@ -9,7 +9,6 @@ import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
 import ResearchPage from '@/components/pages/ResearchPage';
 import ResearchHighlights from '@/components/home/ResearchHighlights';
-import VisitorMap from '@/components/home/VisitorMap';
 import type { SiteConfig } from '@/lib/config';
 import { Publication } from '@/types/publication';
 import { CardPageConfig, PublicationPageConfig, TextPageConfig, ResearchPageConfig, ResearchItem } from '@/types/page';
@@ -17,7 +16,7 @@ import { useLocaleStore } from '@/lib/stores/localeStore';
 
 interface SectionConfig {
   id: string;
-  type: 'markdown' | 'publications' | 'list' | 'research_highlights' | 'visitors';
+  type: 'markdown' | 'publications' | 'list' | 'research_highlights';
   title?: string;
   description?: string;
   source?: string;
@@ -43,7 +42,6 @@ export interface HomePageLocaleData {
   social: SiteConfig['social'];
   features: SiteConfig['features'];
   cv?: SiteConfig['cv'];
-  analytics?: SiteConfig['analytics'];
   enableOnePageMode?: boolean;
   researchInterests?: string[];
   pagesToShow: PageData[];
@@ -113,15 +111,6 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
                         items={section.highlights || []}
                         title={section.title}
                         href={section.href}
-                      />
-                    );
-                  case 'visitors':
-                    return (
-                      <VisitorMap
-                        key={section.id}
-                        title={section.title}
-                        description={section.description}
-                        analytics={data.analytics}
                       />
                     );
                   default:

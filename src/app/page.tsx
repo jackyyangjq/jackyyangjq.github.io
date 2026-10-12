@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 interface SectionConfig {
   id: string;
-  type: 'markdown' | 'publications' | 'list' | 'research_highlights' | 'visitors';
+  type: 'markdown' | 'publications' | 'list' | 'research_highlights';
   title?: string;
   description?: string;
   source?: string;
@@ -158,7 +158,6 @@ function loadPageDataForLocale(locale: string | undefined): HomePageLocaleData {
     social: localeConfig.social,
     features: localeConfig.features,
     cv: localeConfig.cv,
-    analytics: localeConfig.analytics,
     enableOnePageMode,
     researchInterests,
     pagesToShow,

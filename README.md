@@ -8,12 +8,12 @@ Built with [PRISM](https://github.com/xyjoey/PRISM) (MIT licence), a Next.js tem
 - project cards with figures and links
 - a `guide` page type for structured pages (icon tiles, a timeline, a step flow, an effort switcher, fold-out lists, scroll animations), used by the AI Workflow page (`content/ai-workflow.toml`, English only)
 - CV downloads in the sidebar
-- a visitor map and statistics page, fed by cookie-free analytics
+- cookie-free visit statistics, visible only to me on a private page (`analytics/`, a Cloudflare Worker)
 - English and Chinese versions, light and dark themes
 
 ## Updating
 
-Content lives in `content/` (English) and `content_zh/` (Chinese), as TOML and Markdown files. Pushing to `main` builds the site and deploys it to GitHub Pages; a daily scheduled run refreshes the visitor statistics.
+Content lives in `content/` (English) and `content_zh/` (Chinese), as TOML and Markdown files. Pushing to `main` builds the site and deploys it to GitHub Pages; the visit counter in `analytics/` is deployed separately with `npx wrangler@4 deploy` from that folder.
 
 ```bash
 npm ci
@@ -21,7 +21,7 @@ npm run dev      # local preview at http://localhost:3000
 npm run build    # static export to out/
 ```
 
-The world map outline in `public/data/world.json` is generated once with `node scripts/build-world-map.mjs` from [world-atlas](https://github.com/topojson/world-atlas) (Natural Earth, public domain).
+The world map outline in `public/data/world.json` (used by the counter's map) is generated once with `node scripts/build-world-map.mjs` from [world-atlas](https://github.com/topojson/world-atlas) (Natural Earth, public domain).
 
 ## Licence
 

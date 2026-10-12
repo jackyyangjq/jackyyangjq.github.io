@@ -31,9 +31,3 @@ type = "list"
 source = "news.toml"
 title = "News"
 limit = 8
-
-[[sections]]
-id = "visitors"
-type = "visitors"
-title = "Visitors"
-description = "Where visitors to this site come from."
