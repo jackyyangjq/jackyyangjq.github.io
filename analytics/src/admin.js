@@ -1,6 +1,7 @@
 // The owner's private statistics page. It holds no data itself: it asks for the key once,
 // keeps it in this browser only, and reads /recent.json with it. The overview (map, totals,
-// daily visits, top places and sources) comes from /stats.json and /map.svg.
+// daily visits, top places and sources) comes from /stats.json and /map.svg?lang=zh, which is
+// inlined so that hovering over a country or city shows its visits. Times are UK time.
 
 export const ADMIN_HTML = `<!doctype html>
 <html lang="zh-CN">
@@ -27,7 +28,13 @@ export const ADMIN_HTML = `<!doctype html>
   .tile b { display:block; font-size:22px; }
   .tile span { color:var(--muted); font-size:12px; }
   .card { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:16px; }
-  .map { display:block; width:100%; height:auto; border-radius:8px; }
+  .mapbox { position:relative; }
+  .mapbox svg { display:block; width:100%; height:auto; border-radius:8px; }
+  .mapbox [data-code] { cursor:default; }
+  .mapbox path[data-code]:hover { stroke:#211b1c; stroke-width:1.2; }
+  .mapbox circle[data-code]:hover { stroke:#211b1c; }
+  .tip { position:absolute; pointer-events:none; background:#211b1c; color:#fcfbf9; font-size:12px; line-height:1.4; padding:6px 9px; border-radius:6px; white-space:nowrap; transform:translate(-50%, calc(-100% - 10px)); display:none; z-index:2; }
+  .tip b { display:block; font-size:13px; }
   .bars { display:flex; align-items:flex-end; gap:3px; height:120px; border-bottom:1px solid var(--line); }
   .bars div { flex:1; background:var(--accent); border-radius:3px 3px 0 0; min-height:1px; }
   .bars div.zero { background:var(--line); }
@@ -51,7 +58,7 @@ export const ADMIN_HTML = `<!doctype html>
 <body>
 <main>
   <h1>访问统计</h1>
-  <p class="note">只有你能看，网站上不再公开。每条记录只有时间、页面、来源、大致地点和所属网络（运营商、大学或公司），不含 IP 地址。时间按香港时间显示。</p>
+  <p class="note">只有你能看，网站上不再公开。每条记录只有时间、页面、来源、大致地点和所属网络（运营商、大学或公司），不含 IP 地址。时间按英国时间显示（夏令时自动切换）。</p>
   <form id="f"><input id="k" type="password" autocomplete="current-password" placeholder="输入访问密钥（只保存在这台设备的浏览器里）"><button>查看</button></form>
   <div id="out"></div>
 </main>
@@ -105,10 +112,7 @@ function overview(stats) {
   frag.append(el('h2', null, '总览' + (stats.since ? '（自 ' + day(stats.since) + ' 起）' : '')));
   frag.append(tiles([[num.format(t.visitors || 0), '访问'], [num.format(t.pageviews || 0), '浏览量'], [num.format(t.downloads || 0), '简历下载'], [num.format(countries.length), '国家和地区']]));
 
-  const mapCard = el('div', 'card');
-  const img = el('img', 'map'); img.src = '/map.svg'; img.alt = '访客世界地图';
-  mapCard.append(img);
-  frag.append(mapCard);
+  frag.append(mapCard());
 
   const daily = stats.daily || [];
   if (daily.length) {
@@ -139,6 +143,36 @@ function overview(stats) {
   return frag;
 }
 
+// The map is fetched as SVG text and inlined (an <img> cannot react to the mouse). Each country
+// and city dot carries data-code / data-city / data-v, which the tooltip reads.
+function mapCard() {
+  const card = el('div', 'card');
+  const box = el('div', 'mapbox');
+  const tip = el('div', 'tip');
+  card.append(box);
+  fetch('/map.svg?lang=zh', { cache: 'no-cache' }).then((r) => (r.ok ? r.text() : Promise.reject())).then((text) => {
+    const svg = new DOMParser().parseFromString(text, 'image/svg+xml').documentElement;
+    if (svg.nodeName !== 'svg') throw new Error('bad map');
+    svg.querySelectorAll('title').forEach((t) => t.remove());
+    svg.removeAttribute('width'); svg.removeAttribute('height');
+    box.append(document.importNode(svg, true), tip);
+    box.addEventListener('mousemove', (e) => {
+      const target = e.target.closest ? e.target.closest('[data-code]') : null;
+      if (!target) { tip.style.display = 'none'; return; }
+      const v = Number(target.dataset.v) || 0;
+      const city = target.dataset.city;
+      tip.innerHTML = '';
+      tip.append(el('b', null, city ? city + ' · ' + placeName(target.dataset.code) : placeName(target.dataset.code)), el('span', null, v ? num.format(v) + ' 次访问' : '暂无访问'));
+      const rect = box.getBoundingClientRect();
+      tip.style.left = (e.clientX - rect.left) + 'px';
+      tip.style.top = (e.clientY - rect.top) + 'px';
+      tip.style.display = 'block';
+    });
+    box.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+  }).catch(() => { box.append(el('p', 'muted', '地图暂时无法读取。')); });
+  return card;
+}
+
 async function load(key) {
   out.textContent = '加载中…';
   const res = await fetch('/recent.json', { headers: { authorization: 'Bearer ' + key } });
@@ -146,7 +180,7 @@ async function load(key) {
   const { events } = await res.json();
   let stats = null;
   try { const s = await fetch('/stats.json', { cache: 'no-cache' }); if (s.ok) stats = await s.json(); } catch (err) {}
-  const fmt = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Hong_Kong', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
+  const fmt = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Europe/London', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
   const visits = events.filter((e) => e.new_visit).length;
   const downloads = events.filter((e) => e.kind === 'download').length;
   out.innerHTML = '';

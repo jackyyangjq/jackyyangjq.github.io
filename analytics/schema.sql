@@ -16,7 +16,7 @@ CREATE INDEX IF NOT EXISTS events_ts ON events (ts);
 
 -- Aggregates kept up to date on every write, so public statistics never scan the raw events
 CREATE TABLE IF NOT EXISTS daily (
-  day TEXT PRIMARY KEY,
+  day TEXT PRIMARY KEY,      -- calendar date in UK time (Europe/London)
   visits INTEGER NOT NULL DEFAULT 0,
   pageviews INTEGER NOT NULL DEFAULT 0,
   downloads INTEGER NOT NULL DEFAULT 0

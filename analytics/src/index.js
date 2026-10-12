@@ -23,7 +23,7 @@ export default {
       if (url.pathname === '/v' && request.method === 'POST') return await recordVisit(request, env);
       if (url.pathname === '/stats.json' && request.method === 'GET') return json(await getStats(env), 300);
       if (url.pathname === '/map.svg' && request.method === 'GET') {
-        const svg = renderMapSvg(await getStats(env));
+        const svg = renderMapSvg(await getStats(env), { lang: url.searchParams.get('lang') === 'zh' ? 'zh' : 'en' });
         return new Response(svg, {
           headers: {
             'content-type': 'image/svg+xml; charset=utf-8',
@@ -127,8 +127,9 @@ async function recordVisit(request, env) {
   // Name of the network the visit came from (an ISP, university or company); shown only in the private log
   const network = typeof cf.asOrganization === 'string' && cf.asOrganization ? cf.asOrganization.slice(0, 80) : null;
 
-  const ts = new Date().toISOString();
-  const day = ts.slice(0, 10);
+  const now = new Date();
+  const ts = now.toISOString();
+  const day = londonDay(now);
 
   const statements = [
     env.DB.prepare('INSERT INTO events (ts, kind, path, referrer, country, region, city, network, new_visit, lang) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
@@ -166,15 +167,15 @@ async function getStats(env) {
     env.DB.prepare('SELECT code, visits FROM countries WHERE visits > 0 ORDER BY visits DESC'),
     env.DB.prepare('SELECT city, country, lat, lon, visits FROM cities WHERE visits > 0 ORDER BY visits DESC LIMIT 100'),
     env.DB.prepare('SELECT domain, visits FROM referrers WHERE visits > 0 ORDER BY visits DESC LIMIT 20'),
-    env.DB.prepare("SELECT day, visits FROM daily WHERE day >= date('now', '-29 days') ORDER BY day"),
+    env.DB.prepare("SELECT day, visits FROM daily WHERE day >= date('now', '-31 days') ORDER BY day"),
   ]);
 
   const t = totals.results[0] || {};
   const byDay = new Map(daily.results.map((row) => [row.day, row.visits]));
   const days = [];
-  const today = new Date();
+  const today = new Date(londonDay(new Date()) + 'T00:00:00Z');
   for (let i = 29; i >= 0; i--) {
-    const d = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() - i)).toISOString().slice(0, 10);
+    const d = new Date(today.getTime() - i * 86400000).toISOString().slice(0, 10);
     days.push({ date: d, visitors: byDay.get(d) || 0 });
   }
 
@@ -199,6 +200,11 @@ async function getRecent(request, env) {
     'SELECT ts, kind, path, referrer, country, region, city, network, new_visit, lang FROM events ORDER BY id DESC LIMIT 300',
   ).all();
   return json({ events: results }, 0);
+}
+
+// Calendar date (YYYY-MM-DD) in UK time, so days switch at midnight in London, summer time included
+function londonDay(date) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London', year: 'numeric', month: '2-digit', day: '2-digit' }).format(date);
 }
 
 // Constant-time comparison of two strings via their SHA-256 digests

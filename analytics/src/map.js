@@ -1,5 +1,6 @@
 // Static SVG world map of the site's visits, for places that cannot run scripts (the GitHub
-// profile README). Same bins, colours and projection as the map on the website.
+// profile README) and, inlined, for the hover map on /admin. Same bins, colours and projection
+// as the map on the website. The data-* attributes carry what the admin page shows on hover.
 
 import world from '../../public/data/world.json';
 
@@ -31,7 +32,8 @@ const bin = (v) => EDGES.reduce((b, edge, i) => (v >= edge ? i : b), -1);
 const fill = (v) => (bin(v) < 0 ? EMPTY : RAMP[bin(v)]);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-export function renderMapSvg(stats) {
+export function renderMapSvg(stats, { lang = 'en' } = {}) {
+  const zh = lang === 'zh';
   const byCountry = new Map((stats.countries || []).map((c) => [c.code, c.visitors]));
   const outlined = new Set(world.shapes.map((s) => s.code));
   const W = world.width;
@@ -44,13 +46,13 @@ export function renderMapSvg(stats) {
   for (const shape of world.shapes) {
     const v = byCountry.get(shape.code) || 0;
     const title = v > 0 ? `<title>${esc(shape.name.en)}: ${v}</title>` : '';
-    parts.push(`<path d="${shape.d}" fill="${fill(v)}" stroke="${SURFACE}" stroke-width="0.6">${title}</path>`);
+    parts.push(`<path d="${shape.d}" fill="${fill(v)}" stroke="${SURFACE}" stroke-width="0.6" data-code="${esc(shape.code)}" data-v="${v}">${title}</path>`);
   }
   // Places too small to have an outline at this scale (Hong Kong, Macao, Singapore)
   for (const [code, v] of byCountry) {
     if (v > 0 && !outlined.has(code) && world.centroids[code]) {
       const c = world.centroids[code];
-      parts.push(`<circle cx="${c.x}" cy="${c.y}" r="5.5" fill="${fill(v)}" stroke="${SURFACE}" stroke-width="2.5"><title>${esc(c.name.en)}: ${v}</title></circle>`);
+      parts.push(`<circle cx="${c.x}" cy="${c.y}" r="5.5" fill="${fill(v)}" stroke="${SURFACE}" stroke-width="2.5" data-code="${esc(code)}" data-v="${v}"><title>${esc(c.name.en)}: ${v}</title></circle>`);
     }
   }
   // City dots, sized by visits
@@ -59,13 +61,15 @@ export function renderMapSvg(stats) {
   for (const c of [...cities].sort((a, b) => b.visitors - a.visitors)) {
     const [x, y] = project(c.lon, c.lat);
     const r = 3 + 5 * Math.sqrt(c.visitors / maxCity);
-    parts.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${INK}" fill-opacity="0.85" stroke="${SURFACE}" stroke-width="1.5"><title>${esc(c.city)}: ${c.visitors}</title></circle>`);
+    parts.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${INK}" fill-opacity="0.85" stroke="${SURFACE}" stroke-width="1.5" data-city="${esc(c.city)}" data-code="${esc(c.country)}" data-v="${c.visitors}"><title>${esc(c.city)}: ${c.visitors}</title></circle>`);
   }
 
   const visits = stats.totals?.visitors ?? 0;
   const countryCount = [...byCountry.values()].filter((v) => v > 0).length;
   const y = mapH + 28;
-  const label = visits > 0
+  const label = zh
+    ? (visits > 0 ? `共 ${visits.toLocaleString('zh-CN')} 次访问，来自 ${countryCount} 个国家和地区` : '刚开始统计访问')
+    : visits > 0
     ? `${visits.toLocaleString('en-GB')} ${visits === 1 ? 'visit' : 'visits'} from ${countryCount} ${countryCount === 1 ? 'country or region' : 'countries and regions'}`
     : 'Visit counting has just started';
   parts.push(`<text x="24" y="${y}" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" fill="#44403c">${esc(label)}</text>`);
