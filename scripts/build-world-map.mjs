@@ -1,4 +1,4 @@
-// Builds public/data/world.json: projected country outlines for the visitor map,
+// Builds public/data/world.json: projected country outlines for the visit counter's map,
 // plus a centroid for every country so small places (Hong Kong, Macao, Singapore)
 // that have no outline at this scale can still be drawn as a dot.
 //

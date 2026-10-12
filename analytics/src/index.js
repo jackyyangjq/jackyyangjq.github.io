@@ -1,9 +1,9 @@
 // Cookie-free visit counter for jackyyangjq.github.io.
 //
 //   POST /v            beacon from the site: { p: path, r: document.referrer, n: 1 if a new visit, t: 'view'|'download', l: 'en'|'zh' }
-//   GET  /stats.json   public aggregates for the visitor map (no individual visits)
+//   GET  /stats.json   aggregates for the map and the overview on /admin (no individual visits)
 //   GET  /map.svg      the same map as an image, for the GitHub profile README
-//   GET  /admin        the owner's private page; reads /recent.json with a key
+//   GET  /admin        the owner's private statistics page; reads /recent.json with a key
 //
 // Location comes from Cloudflare's own IP geolocation (request.cf). The IP address and the
 // browser's user agent are never stored.
@@ -38,7 +38,7 @@ export default {
           headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' },
         });
       }
-      if (url.pathname === '/') return Response.redirect(`${SITE_ORIGIN}/visitors/`, 302);
+      if (url.pathname === '/') return Response.redirect(`${SITE_ORIGIN}/`, 302);
       return new Response('Not found', { status: 404 });
     } catch (error) {
       console.error(error);

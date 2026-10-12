@@ -33,8 +33,6 @@ export interface SiteConfig {
   analytics?: {
     // Base URL of the site's own visit counter (Cloudflare Worker)
     endpoint?: string;
-    map_data?: string;
-    share_url?: string;
   };
   social: {
     email?: string;

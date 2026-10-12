@@ -7,7 +7,7 @@ import { useLocaleStore } from '@/lib/stores/localeStore';
 // Cookie-free visit counting. Sends one small beacon per page view (and one per CV download) to the
 // site's own counter. Nothing is sent when the visitor has opted out, when the browser signals
 // Do Not Track or Global Privacy Control, or on a local preview.
-export const OPT_OUT_KEY = 'jy-no-track';
+const OPT_OUT_KEY = 'jy-no-track';
 const VISIT_KEY = 'jy-visit';
 
 // Kept outside the component: the page tree mounts twice on load (theme provider), and a

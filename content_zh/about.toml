@@ -31,9 +31,3 @@ type = "list"
 source = "news.toml"
 title = "动态"
 limit = 8
-
-[[sections]]
-id = "visitors"
-type = "visitors"
-title = "访客"
-description = "本站访客来自哪里。"

@@ -35,18 +35,6 @@
 
   /* Heading typeface; switched to a Chinese serif below when the page is in Chinese */
   --site-serif: Georgia, var(--font-gelasio), 'Times New Roman', serif;
-
-  /* Visitor map: one-hue sequential ramp, light -> dark (validated as an ordinal ramp) */
-  --map-0: #dc93a0;
-  --map-1: #c56677;
-  --map-2: #a93f53;
-  --map-3: #8b1e2d;
-  --map-4: #5e0f1b;
-  --map-empty: #ebe7e3;
-  --map-border: #fcfbf9;
-  --map-dot: #211b1c;
-  --chart-bar: #8b1e2d;
-  --chart-grid: #e7e4e0;
   
   /* Semantic colors */
   --success: #10b981;
@@ -185,18 +173,6 @@ html[data-locale^="zh"] {
   --neutral-900: #141112;
 
   --surface: #1b1718;
-
-  /* Visitor map ramp re-stepped for the dark surface: few visitors = dim, many = bright */
-  --map-0: #74374a;
-  --map-1: #98485d;
-  --map-2: #bd5d75;
-  --map-3: #df7f94;
-  --map-4: #f5b2be;
-  --map-empty: #2b2526;
-  --map-border: #141112;
-  --map-dot: #f5f2f0;
-  --chart-bar: #e07a88;
-  --chart-grid: #332d2e;
 }
 
 

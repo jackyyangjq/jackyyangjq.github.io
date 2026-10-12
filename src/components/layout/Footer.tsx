@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useLocaleStore } from '@/lib/stores/localeStore';
 import { useMessages } from '@/lib/i18n/useMessages';
 
@@ -27,10 +26,7 @@ export default function Footer({ lastUpdated, lastUpdatedByLocale, defaultLocale
           <p className="text-xs text-neutral-500">
             {messages.footer.lastUpdated}: {resolvedLastUpdated}
           </p>
-          <p className="text-xs text-neutral-500 flex items-center gap-4">
-            <Link href="/visitors/" className="hover:text-accent transition-colors">
-              {messages.visitors.title}
-            </Link>
+          <p className="text-xs text-neutral-500">
             <a href="https://github.com/xyjoey/PRISM" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
               {messages.footer.builtWithPrism}
             </a>
