@@ -3,6 +3,13 @@ title = "教学"
 description = "教学方向：旅游与酒店经济学、酒店财务管理、服务业中的商业分析与人工智能、研究方法与计量经济学。"
 
 [[items]]
+title = "用 AI 辅助学习与研究"
+subtitle = "客座研讨课 · 萨里商学院 Research Methods（MANM386）"
+date = "2026 年 10 月"
+content = "为旅游与酒店管理硕士生上的三场课，讲如何在课程作业和毕业论文研究中使用 AI，重点是让 AI 的输出可以核查。学生用结构化提示词研读一篇 Tourism Management 论文，用 AI 工具查找、阅读文献并获取写作反馈，学习核对参考文献和遵守萨里大学的 AI 使用规定，再让 AI 写 Python 代码、自己在 Google Colab 中运行和检查，做出一张期刊风格的图。最后介绍 Claude Code、Codex 等智能体工具。"
+tags = ["研究生", "人工智能", "研究方法"]
+
+[[items]]
 title = "酒店、旅游与会展财务管理（HTM3222）"
 subtitle = "助教 · 香港理工大学"
 date = "2025 年春季学期"

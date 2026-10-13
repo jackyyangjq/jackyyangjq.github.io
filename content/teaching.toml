@@ -3,6 +3,13 @@ title = "Teaching"
 description = "Teaching interests: tourism and hospitality economics, financial management in hospitality, business analytics and AI in service industries, and research methods and econometrics."
 
 [[items]]
+title = "Using AI for Study and Research"
+subtitle = "Guest seminar · Research Methods (MANM386), Surrey Business School"
+date = "October 2026"
+content = "Three sessions for MSc Tourism and Hospitality students on using AI in coursework and dissertation research, with the emphasis on habits that keep AI output checkable. Students wrote structured prompts on a Tourism Management paper, used AI tools to find, read and get feedback on literature, learned to check references and to follow Surrey's rules on AI use, and had AI write Python code that they ran and verified in Google Colab to produce a journal-style figure. The seminar closed with an introduction to agentic tools such as Claude Code and Codex."
+tags = ["Postgraduate", "AI", "Research methods"]
+
+[[items]]
 title = "Financial Management in Hospitality, Tourism and Events (HTM3222)"
 subtitle = "Teaching assistant · The Hong Kong Polytechnic University"
 date = "Spring 2025"
