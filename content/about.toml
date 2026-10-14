@@ -17,6 +17,15 @@ source = "bio.md"
 title = "About"
 
 [[sections]]
+id = "publications"
+type = "research_highlights"
+source = "research.toml"
+group = "publications"
+href = "/research"
+title = "Publications"
+limit = 3
+
+[[sections]]
 id = "highlights"
 type = "research_highlights"
 source = "research.toml"

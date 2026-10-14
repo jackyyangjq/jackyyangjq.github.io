@@ -6,6 +6,25 @@ methods_description = "每一类方法都附有公开代码，在模拟数据或
 note = "† 通讯作者。在审论文不展示估计结果和原图，以尊重审稿流程；示意图只画研究设计，不代表结果。"
 
 [[groups]]
+id = "publications"
+title = "已发表论文"
+
+[[groups.items]]
+title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
+status = "已发表"
+venue = "Journal of Cleaner Production, 581, 149668 (2026)"
+authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
+summary = "中国分批在各地区推出的碳排放权交易试点，用上市公司面板数据和一个部分基于年报文本构建的绿色转型新指数研究。"
+finding = "纳入碳市场使企业绿色转型指数上升约为样本均值的 7%，部分通过人力资本升级和研发投入增加实现；非国有企业以及中西部企业的效应更大。"
+figure = "/images/research/green-index-design.svg"
+figure_alt = "研究设计示意：年报文本经词向量扩充的词典打分，与其他指标合成企业年度绿色指数；试点分三批启动，另有企业始终未覆盖，用分批实施的双重差分比较。不展示结果。"
+figure_caption = "研究设计示意。"
+methods = ["分批实施的 DID（Callaway–Sant'Anna）", "Goodman-Bacon 分解", "词向量扩展词典", "CRITIC 与熵权赋权", "自助法中介检验"]
+[[groups.items.links]]
+label = "论文全文（DOI）"
+href = "https://doi.org/10.1016/j.jclepro.2026.149668"
+
+[[groups]]
 id = "working-papers"
 title = "在审论文"
 
@@ -38,17 +57,6 @@ methods = ["大模型方面级情感分析", "信度检验", "单位根检验", 
 [[groups.items.links]]
 label = "文本测量代码"
 href = "https://github.com/jackyyangjq/llm-text-measurement"
-
-[[groups.items]]
-title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
-status = "修改后再审"
-venue = "Journal of Cleaner Production"
-authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
-summary = "中国分批在各地区推出的碳排放权交易试点，用上市公司面板数据和一个部分基于年报文本构建的绿色转型新指数研究。"
-figure = "/images/research/green-index-design.svg"
-figure_alt = "研究设计示意：年报文本经词向量扩充的词典打分，与其他指标合成企业年度绿色指数；试点分三批启动，另有企业始终未覆盖，用分批实施的双重差分比较。不展示结果。"
-figure_caption = "研究设计示意。"
-methods = ["分批实施的 DID（Callaway–Sant'Anna）", "Goodman-Bacon 分解", "词向量扩展词典", "CRITIC 与熵权赋权", "自助法中介检验"]
 
 [[groups]]
 id = "in-progress"

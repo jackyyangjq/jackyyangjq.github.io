@@ -17,6 +17,15 @@ source = "bio.md"
 title = "关于我"
 
 [[sections]]
+id = "publications"
+type = "research_highlights"
+source = "research.toml"
+group = "publications"
+href = "/research"
+title = "已发表论文"
+limit = 3
+
+[[sections]]
 id = "highlights"
 type = "research_highlights"
 source = "research.toml"

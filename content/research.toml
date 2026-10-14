@@ -6,6 +6,25 @@ methods_description = "Each area links to open code that runs the methods on sim
 note = "† Corresponding author. Papers under review are shown without estimates or original figures, to respect the review process; the sketches show each research design, not results."
 
 [[groups]]
+id = "publications"
+title = "Publications"
+
+[[groups.items]]
+title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
+status = "Published"
+venue = "Journal of Cleaner Production, 581, 149668 (2026)"
+authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
+summary = "China's emissions-trading pilots, introduced in waves across regions, studied with a panel of listed firms and a new index of green transformation built partly from the text of annual reports."
+finding = "Coverage by the carbon market raised firms' green transformation index by about 7% of its sample mean, partly through upgraded human capital and more R&D; the effect was larger for non-state-owned firms and for firms in central and western China."
+figure = "/images/research/green-index-design.svg"
+figure_alt = "Design sketch: annual-report text, scored with a dictionary expanded by word embeddings, feeds a firm-by-year green index; pilots that start in three waves, with some firms never covered, are compared with a staggered difference-in-differences design. No results shown."
+figure_caption = "Design sketch."
+methods = ["Staggered DiD (Callaway–Sant'Anna)", "Goodman-Bacon decomposition", "Dictionary expanded with word embeddings", "CRITIC and entropy weighting", "Bootstrapped mediation"]
+[[groups.items.links]]
+label = "Article (DOI)"
+href = "https://doi.org/10.1016/j.jclepro.2026.149668"
+
+[[groups]]
 id = "working-papers"
 title = "Under review"
 
@@ -38,17 +57,6 @@ methods = ["LLM aspect-based sentiment", "Reliability checks", "Unit-root tests"
 [[groups.items.links]]
 label = "Text-measurement code"
 href = "https://github.com/jackyyangjq/llm-text-measurement"
-
-[[groups.items]]
-title = "The green push: How does China's carbon-emissions trading drive corporate green transformation?"
-status = "Revise & resubmit"
-venue = "Journal of Cleaner Production"
-authorship = "**Yang, J.**, Lai, L.†, Hsu, S.-C., & Wei, H.-H."
-summary = "China's emissions-trading pilots, introduced in waves across regions, studied with a panel of listed firms and a new index of green transformation built partly from the text of annual reports."
-figure = "/images/research/green-index-design.svg"
-figure_alt = "Design sketch: annual-report text, scored with a dictionary expanded by word embeddings, feeds a firm-by-year green index; pilots that start in three waves, with some firms never covered, are compared with a staggered difference-in-differences design. No results shown."
-figure_caption = "Design sketch."
-methods = ["Staggered DiD (Callaway–Sant'Anna)", "Goodman-Bacon decomposition", "Dictionary expanded with word embeddings", "CRITIC and entropy weighting", "Bootstrapped mediation"]
 
 [[groups]]
 id = "in-progress"
